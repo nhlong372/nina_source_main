@@ -1,0 +1,5 @@
+::1()--query--tables(delete from table_user_online where time < 1692865687) (15:38:07 24/08/2023)
+::1()--query--tables(delete from table_user_online where time < 1692870663) (17:01:03 24/08/2023)
+::1()--query--tables(delete from table_user_online where time < 1692870824) (17:03:44 24/08/2023)
+::1()--query--tables(delete from table_user_online where time < 1692870854) (17:04:14 24/08/2023)
+::1()--query--tables(delete from table_user_online where time < 1692870890) (17:04:50 24/08/2023)

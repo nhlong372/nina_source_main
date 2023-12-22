@@ -1,0 +1,4 @@
+::1(admin)--query--tables(delete from table_user_online where time < 1686710451) (09:50:51 14/06/2023)
+::1(admin)--update--setting([["","id","=","1"]]) (09:52:48 14/06/2023)
+::1(admin)--query--tables(delete from table_seo where id_parent =  and com = 'setting' and act = 'update' and type = 'setting') (09:52:48 14/06/2023)
+::1(admin)--insert--seo(314) (09:52:49 14/06/2023)

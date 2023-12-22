@@ -1,0 +1,33 @@
+/* popup styles */
+.popup-overlay { background: rgba(0, 0, 0, 0.8); position: absolute; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%;}
+.popup-content { position: absolute; background: #fff; width: 500px; margin: -58px 0 0 -264px; left: 50%; top: 35%; z-index: 10; padding: 14px; }
+.close-popup { display: inline-block; position: absolute; top: 0; right: 0; font-size: 40px; width: 45px; height: 45px; text-align: center; padding: 0px 0px; line-height: 45px; background-color: #cc0000; color: #fff; }
+
+/* 
+a { color: rgb(0, 159, 211); text-decoration: none; } */
+/* .btn { background: rgb(0, 159, 211); color: #fff; border: 1px solid; display: inline-block; padding: 5px 20px; }
+.btn:hover { background: #fff; color: rgb(0, 159, 211); } */
+.popup { -webkit-perspective: 1200px; -moz-perspective: 1200px; perspective: 1200px; }
+.popup-content { -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; transform-style: preserve-3d; }
+
+/* pop up datlich */
+#popup-form{display: none; position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 999999;height: 100%;width: 100%;}
+#popup-form .modal-content{background-color: rgb(0 0 0 / 75%);padding: 22px;border-radius: 5px;}
+#popup-form .modal-content .modal-header{border-bottom: 0; padding-bottom: 0; justify-content: center; position: relative; }
+#popup-form .modal-content .modal-header .btn-close{ background-color: var(--maincolor);position: absolute; right: -8px; top: -8px; z-index: 2; opacity: 1;border: 1px solid var(--maincolor);}
+#popup-form .modal-content .modal-header .btn-close:focus{border: 0; box-shadow: none; }
+#popup-form .modal-content .modal-header .btn-close i{color:#fff;}
+#popup-form .modal-content .modal-header .title-main{margin-bottom: 33px; position: relative;}
+#popup-form .modal-content .modal-header .title-main::before{ content: ""; background-color: #D9D9D9; width: 94px; height: 1px; position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); }
+#popup-form .modal-content .modal-header .title-main span{font-size: 30px; color: #fff}
+#popup-form .modal-content .modal-header .slogan-main{}
+#popup-form .modal-content .modal-header .slogan-main span{color: #fff;}
+#popup-form .modal-content .modal-body{padding: 1rem 1rem 0 1rem;}
+#popup-form .modal-content .modal-body .layout-form form .newsletter-input{margin-bottom: 10px;}
+#popup-form .modal-content .modal-body .layout-form form .newsletter-input input{background-color: #fff;color: #000;}
+#popup-form .modal-content .modal-body .layout-form form .newsletter-input input::placeholder,#popup-form .modal-content .modal-body .layout-form form .newsletter-input textarea::placeholder{color: #000;}
+#popup-form .modal-content .modal-body .layout-form form .newsletter-input input::-webkit-input-placeholder,#popup-form .modal-content .modal-body .layout-form form .newsletter-input textarea::-webkit-input-placeholder{color: #000;}
+#popup-form .modal-content .modal-body .layout-form form .newsletter-input textarea{height: 100px;background-color: #fff;color: #000;}
+#popup-form .modal-content .modal-footer{border-top: 0; padding-top: 0;    border-top: 0; padding-top: 0; margin: 0 auto 0; width: 30%; }
+#popup-form .modal-content .modal-footer .btn-sm{text-transform: uppercase; height: 40px; background-color: var(--maincolor) !important; border-color: var(--maincolor) !important; color: #fff; font-size: 15px;padding: 10px 0;  } 
+#popup-form .modal-content .modal-footer .btn-sm:hover{background-color: transparent !important; color: var(--maincolor);}
