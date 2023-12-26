@@ -535,20 +535,22 @@ echo $js->get();
     });
 </script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.btn-alert').click(function() {
-            notifyDialog('Hiện sản phẩm này chưa có giá, bạn vui lòng liên hệ qua hotline <a href="tel:<?= preg_replace('/[^0-9]/', '3000', $optsetting['hotline']); ?>">' + PHONENUMBER + '</a> này để được biết giá', 'Thông báo', 'fas fa-exclamation-triangle', 'blue', '10000');
-        })
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.btn-alert2').click(function() {
-            notifyDialog('Hiện sản phẩm này chưa có giá, bạn vui lòng liên hệ qua hotline <a href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>">' + PHONENUMBER + '</a> này để được biết giá', 'Thông báo', 'fas fa-exclamation-triangle', 'blue', '10000');
-        })
-    });
-</script>
+<?php if ($source == 'product') { ?>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.btn-alert').click(function () {
+                notifyDialog('Hiện sản phẩm này chưa có giá, bạn vui lòng liên hệ qua hotline <a href="tel:<?= preg_replace('/[^0-9]/', '3000', $optsetting['hotline']); ?>">' + PHONENUMBER + '</a> này để được biết giá', 'Thông báo', 'fas fa-exclamation-triangle', 'blue', '10000');
+            })
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.btn-alert2').click(function () {
+                notifyDialog('Hiện sản phẩm này chưa có giá, bạn vui lòng liên hệ qua hotline <a href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>">' + PHONENUMBER + '</a> này để được biết giá', 'Thông báo', 'fas fa-exclamation-triangle', 'blue', '10000');
+            })
+        });
+    </script>
+<?php } ?>
 
 <!-- <script type="text/javascript">
     // Click functions for popup
