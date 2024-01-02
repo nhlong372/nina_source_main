@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2024 at 03:06 AM
+-- Generation Time: Jan 02, 2024 at 07:17 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -272,7 +272,7 @@ CREATE TABLE `table_contact` (
 CREATE TABLE `table_counter` (
   `id` int(11) NOT NULL,
   `tm` int(11) DEFAULT 0,
-  `ip` varchar(255) DEFAULT '0.0.0.0'
+  `ip` varchar(50) DEFAULT '0.0.0.0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4032,10 +4032,7 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 (10525, 1698826231, '::1'),
 (10526, 1698986787, '::1'),
 (10527, 1698991473, '::1'),
-(0, 1700548122, '::1'),
-(0, 1702873809, '::1'),
-(0, 1702953687, '::1'),
-(0, 1704160927, '::1');
+(10528, 1704176217, '::1');
 
 -- --------------------------------------------------------
 
@@ -5153,7 +5150,7 @@ CREATE TABLE `table_news` (
 --
 
 INSERT INTO `table_news` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `photo`, `photo2`, `file_attach`, `options`, `options2`, `slugvi`, `slugen`, `contenten`, `contentvi`, `descen`, `descvi`, `nameen`, `namevi`, `numb`, `status`, `type`, `date_created`, `date_updated`, `view`) VALUES
-(1, 1, 1, 1, 1, '11182127794613520634170243468346421097717n-1613.jpg', 'icon-t6m-2108.png', '03061912230306191233030619122903061912420306191247-1884.docx', '{\"p\":\"11182127794613520634170243468346421097717n-1613.jpg\",\"w\":810,\"h\":540,\"m\":\"image\\/jpeg\"}', '{\"chucvu\":\"\"}', 'nike-gioi-thieu-giay-da-bong-bang-dan-doc-dao', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Nike introduces a unique taped soccer shoe', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 1, 'noibat,hienthi', 'tin-tuc', 1609287033, 1689580271, 40),
+(1, 1, 1, 1, 1, '11182127794613520634170243468346421097717n-1613.jpg', 'icon-t6m-2108.png', '03061912230306191233030619122903061912420306191247-1884.docx', '{\"p\":\"11182127794613520634170243468346421097717n-1613.jpg\",\"w\":810,\"h\":540,\"m\":\"image\\/jpeg\"}', '{\"chucvu\":\"\"}', 'nike-gioi-thieu-giay-da-bong-bang-dan-doc-dao', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Nike introduces a unique taped soccer shoe', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 1, 'noibat,hienthi', 'tin-tuc', 1609287033, 1704176210, 40),
 (2, 2, 3, 3, 0, '6783077-cool-wallpapers-hd-3332.jpg', NULL, NULL, '{\"p\":\"news-1-4178-8729.jpeg\",\"w\":270,\"h\":200,\"m\":\"image\\/jpeg\"}', '', 'nike-zoom-cong-nghe-dem-giay-thanh-cong-nhat-cua-nike', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Nike Zoom Nike\'s most successful shoe cushioning technology', 'Nike Zoom công nghệ đệm giày thành công nhất của Nike', 2, 'noibat,hienthi', 'tin-tuc', 1609287279, 1673331264, 2),
 (3, 1, 2, 1, 0, '109457207472462487042312982085258215758710n-9953.jpg', NULL, NULL, '', '', 'ga-khong-lo-nike-dong-cua-hang-loat-o-trung-quoc-vi-corona', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Giant Nike mass stores in China because of corona', 'Gã khổng lồ Nike đóng cửa hàng loạt ở Trung Quốc vì corona', 3, 'noibat,hienthi', 'tin-tuc', 1609287411, 1673331271, 0),
 (4, 2, 0, 4, 0, 'yamaha-sirius-ban-do-kieng-dep-lung-linh-518-1457412386-56de592206103-1056.jpg', NULL, NULL, '{\"p\":\"yamaha-sirius-ban-do-kieng-dep-lung-linh-518-1457412386-56de592206103-1056.jpg\",\"w\":960,\"h\":720,\"m\":\"image\\/jpeg\"}', '', 'can-canh-nike-airmax-97-voi-day-giay-thong-minh-cuc-doc', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Close-up of Nike Airmax 97 with unique smart shoelaces', 'Cận cảnh Nike Airmax 97 với dây giày thông minh cực độc', 4, 'noibat,hienthi', 'tin-tuc', 1609287457, 1673331278, 1),
@@ -5346,8 +5343,7 @@ CREATE TABLE `table_order` (
 
 INSERT INTO `table_order` (`id`, `id_user`, `code`, `fullname`, `phone`, `address`, `email`, `order_payment`, `temp_price`, `total_price`, `city`, `district`, `ward`, `ship_price`, `requirements`, `notes`, `date_created`, `order_status`, `numb`) VALUES
 (32, 0, 'QTQYJQ', 'Lưu Thành Công', '0988900981', 'IT test web, Không có mua, Xã Tân Hòa, Huyện Bình Gia, Tỉnh Lạng Sơn', 'tvcong@gmail.com', 9, 77777, 77777, 13, 136, 2317, 0, '123123123', '', 1673063260, 1, 1),
-(33, 0, 'JW9J7H', 'Lê thanh Son', '0986655456', 'ccc, Xã Tiên Lữ, Huyện Lập Thạch, Tỉnh Vĩnh Phúc', 'lethanhson.nina@gmail.com', 10, 250000, 250000, 17, 183, 3118, 0, 'ccccc', '', 1673314038, 1, 1),
-(34, 0, 'X0EIPP', 'Long Beo', '0903137252', '63/ 1 Phú Định Nè, Phường 16, Quận 8, Thành phố Hồ Chí Minh', 'nguyenhoanglong0307@gmail.com', 9, 1650000, 1650000, 50, 564, 8910, 0, 'fasdfasdfasdfasdfasdfasdfasdfqwerqwer', '', 1690442790, 1, 1);
+(33, 0, 'JW9J7H', 'Lê thanh Son', '0986655456', 'ccc, Xã Tiên Lữ, Huyện Lập Thạch, Tỉnh Vĩnh Phúc', 'lethanhson.nina@gmail.com', 10, 250000, 250000, 17, 183, 3118, 0, 'ccccc', '', 1673314038, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -5997,7 +5993,7 @@ CREATE TABLE `table_seo` (
 --
 
 INSERT INTO `table_seo` (`id`, `id_parent`, `com`, `act`, `type`, `titlevi`, `keywordsvi`, `descriptionvi`, `titleen`, `keywordsen`, `descriptionen`, `schemavi`, `schemaen`) VALUES
-(0, 0, 'setting', 'update', 'setting', 'Tên công ty', 'Tên công ty ', 'Tên công ty', '', '', '', '', ''),
+(338, 0, 'setting', 'update', 'setting', 'Tên công ty', 'Tên công ty ', 'Tên công ty', '', '', '', '', ''),
 (110, 1, 'product', 'man_list', 'san-pham', 'Giày nam', 'Giày nam', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'Men\'s shoes', 'Men\'s shoes', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
 (6, 2, 'product', 'man_list', 'san-pham', 'Giày nữ', 'Giày nữ', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'Women\'s shoes', 'Women\'s shoes', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
 (111, 1, 'product', 'man_cat', 'san-pham', 'Giày tây đế cao', 'Giày tây đế cao', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'High heels', 'High heels', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
@@ -6017,7 +6013,7 @@ INSERT INTO `table_seo` (`id`, `id_parent`, `com`, `act`, `type`, `titlevi`, `ke
 (219, 6, 'product', 'man', 'san-pham', 'Giày Slip On Ultraboost 25', 'Giày Slip On Ultraboost 25', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót.  Thiết kế kh', 'Slip On Ultraboost 25', 'Slip On Ultraboost 25', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute. The wireles', '', ''),
 (336, 7, 'product', 'man', 'san-pham', 'Giày Slip On Ultraboost 26', 'Giày Slip On Ultraboost 26', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót.  Thiết kế kh', '', '', '', '', ''),
 (332, 8, 'product', 'man', 'san-pham', 'Giày Slip On Ultraboost 27', 'Giày Slip On Ultraboost 27', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót.  Thiết kế kh', '', '', '', '', ''),
-(323, 1, 'news', 'man', 'tin-tuc', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
+(340, 1, 'news', 'man', 'tin-tuc', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
 (244, 2, 'news', 'man', 'tin-tuc', 'Nike Zoom công nghệ đệm giày thành công nhất của Nike', 'Nike Zoom công nghệ đệm giày thành công nhất của Nike', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
 (245, 3, 'news', 'man', 'tin-tuc', 'Gã khổng lồ Nike đóng cửa hàng loạt ở Trung Quốc vì corona', 'Gã khổng lồ Nike đóng cửa hàng loạt ở Trung Quốc vì corona', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
 (246, 4, 'news', 'man', 'tin-tuc', 'Cận cảnh Nike Airmax 97 với dây giày thông minh cực độc', 'Cận cảnh Nike Airmax 97 với dây giày thông minh cực độc', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
@@ -6088,7 +6084,7 @@ CREATE TABLE `table_setting` (
 --
 
 INSERT INTO `table_setting` (`id`, `options`, `mastertool`, `headjs`, `bodyjs`, `namevi`, `nameen`, `analytics`) VALUES
-(1, '{\"mailertype\":\"1\",\"ip_host\":\"120.72.119.29\",\"port_host\":\"25\",\"secure_host\":\"tls\",\"email_host\":\"no-replay@lucphat.com\",\"password_host\":\"KUV2GqzF\",\"host_gmail\":\"smtp.gmail.com\",\"port_gmail\":\"587\",\"secure_gmail\":\"tls\",\"email_gmail\":\"autosendnoreply01@gmail.com\",\"password_gmail\":\"ntfocjyshxgoxqbg\",\"lang_default\":\"vi\",\"address\":\"\\u0110\\u1ecba ch\\u1ec9 c\\u00f4ng ty\",\"email\":\"emailcongty.company999@gmail.com\",\"hotline\":\"0906191242\",\"phone\":\"0912345678\",\"zalo\":\"0906191242\",\"oaidzalo\":\"\",\"website\":\"https:\\/\\/www.google.com\\/\",\"fanpage\":\"https:\\/\\/www.facebook.com\\/Tocchien\\/\",\"toado\":\"\",\"toado_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"coords\":\"9.982851, 105.933084\",\"coords_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"colorSite\":\"CC0000\",\"slogan\":\"K\\u00ednh Ch\\u00e0o Qu\\u00fd Kh\\u00e1ch \\u0110\\u00e3 Truy C\\u1eadp V\\u00e0o Website C\\u1ee7a C\\u00f4ng Ty\",\"map\":\"https:\\/\\/goo.gl\\/maps\\/mRGctMVZuQXQao93A\",\"hotline2\":\"0906191242\",\"messenger\":\"Tocchien\",\"tiktok\":\"LienquanMobile\",\"time\":\"8h - 21h (T2 - CN)\"}', '', '', '', 'Tên công ty', 'Sneaker Shoes EN', '');
+(1, '{\"mailertype\":\"1\",\"ip_host\":\"120.72.119.29\",\"port_host\":\"25\",\"secure_host\":\"tls\",\"email_host\":\"no-replay@lucphat.com\",\"password_host\":\"KUV2GqzF\",\"host_gmail\":\"smtp.gmail.com\",\"port_gmail\":\"587\",\"secure_gmail\":\"tls\",\"email_gmail\":\"autosendnoreply01@gmail.com\",\"password_gmail\":\"ntfocjyshxgoxqbg\",\"lang_default\":\"vi\",\"address\":\"\\u0110\\u1ecba ch\\u1ec9 c\\u00f4ng ty\",\"email\":\"email99.company@gmail.com\",\"hotline\":\"0906191242\",\"phone\":\"0912345678\",\"zalo\":\"0906191242\",\"oaidzalo\":\"\",\"website\":\"https:\\/\\/www.google.com\\/\",\"fanpage\":\"https:\\/\\/www.facebook.com\\/Tocchien\\/\",\"toado\":\"\",\"toado_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"coords\":\"9.982851, 105.933084\",\"coords_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"colorSite\":\"CC0000\",\"slogan\":\"K\\u00ednh Ch\\u00e0o Qu\\u00fd Kh\\u00e1ch \\u0110\\u00e3 Truy C\\u1eadp V\\u00e0o Website C\\u1ee7a C\\u00f4ng Ty\",\"map\":\"https:\\/\\/goo.gl\\/maps\\/mRGctMVZuQXQao93A\",\"hotline2\":\"0906191242\",\"messenger\":\"Tocchien\",\"tiktok\":\"LienquanMobile\",\"time\":\"8h - 21h (T2 - CN)\"}', '', '', '', 'Tên công ty', 'Sneaker Shoes EN', '');
 
 -- --------------------------------------------------------
 
@@ -6153,8 +6149,8 @@ CREATE TABLE `table_static` (
 INSERT INTO `table_static` (`id`, `photo`, `photo2`, `photo3`, `photo4`, `options`, `options2`, `slugvi`, `slugen`, `contenten`, `contentvi`, `descen`, `descvi`, `nameen`, `namevi`, `file_attach`, `type`, `status`, `date_created`, `date_updated`) VALUES
 (1, 'mountainviewbybyrotekderkflv-9328.png', '', NULL, NULL, '{\"p\":\"mountainviewbybyrotekderkflv-9328.png\",\"w\":1600,\"h\":1116,\"m\":\"image\\/png\"}', '', 've-chung-toi', '', '&lt;p&gt;Nike has always led the market for creativity in its designs. Flyknit shoelace technology is a prime example.&lt;br /&gt;\r\nNike is the market leader in sportswear. This is thanks to Nike possessing a series of state-of-the-art sports technologies such as Dri-fit technology in clothing production, Air Max air cushioning technology. However, when it comes to Nike shoes, we can\'t help but mention Flyknit body technology.&lt;br /&gt;\r\nIntroducing Nike Flyknit technology&lt;br /&gt;\r\nFlyknit technology when introduced in 2012 (photo: sivasdescalzo.com)&lt;br /&gt;\r\nFlyknit is the result of years of research in Nike\'s innovation kitchen. This technology was officially introduced in 2012 at the London Olympics.&lt;br /&gt;\r\nFlyknit owns impressive specs. The entire shoe body is woven from flyknit yarn weighs only 34 grams, when combined with the sole, the total weight of the Flyknit Racer shoes is only 160 grams.&lt;br /&gt;\r\nThis means that athletes will wear shoes that are only half or two-third lighter than they used to be.&lt;br /&gt;\r\nThe essence of the Flynknit technology is the most resilient, monolithic elastomeric fabrics with the latest in digital weaving technology. There are no seams or seams on a sole.&lt;br /&gt;\r\nAs a result, Flyknit is not only light, but also very hugging and can be suitable for all sports such as soccer, jogging, basketball ... etc.&lt;br /&gt;\r\nFlyknit spreading&lt;/p&gt;\r\n', '', 'Soon after, products that used Flyknit bodies were bought by athletes and casual users alike, leading to a sales boom.\r\nThe flyknit shoes, while very expensive, sell out quickly. This reinforces Nike\'s market leadership in sports.', 'Ngay sau đó, những sản phẩm sử dụng thân Flyknit được các vận động viên và cả những người dùng thông thường tìm mua liên tục dẫn đến một sự bùng nổ doanh số.\r\nNhững đôi giày flyknit mặc dù có giá rất cao nhưng đều bán hết nhanh chóng. Điều này giúp củng cố vị thế dẫn đầu thị trường thể thao của Nike.', 'About us', 'Về chúng tôi', '', 'gioi-thieu', 'hienthi', 1609288150, 1689320442),
 (2, '', NULL, NULL, NULL, '', '', 'giay-tot-nhat-cho-nhung-nguoi-tot-nhat', 'finest-footwear-for-finest-peoples', '', '', '', '', 'Finest footwear for finest peoples', 'Giày tốt nhất cho những người tốt nhất', '', 'slogan', 'hienthi', 1609288216, 1609308165),
-(3, '', NULL, NULL, NULL, '', '', '', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: 242 Nguyễn Hữu Cảnh, P. Đa Kao, Q. 8, Hồ Chí Minh&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: unknown2k.nina@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0906191242 hoặc 0901317282&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: &lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;&lt;/p&gt;\r\n', '', '', '', '', '', 'lienhe', 'hienthi', 1609288283, 1689320594),
-(4, '', NULL, NULL, NULL, '', '', 'sneaker-shoes-vi', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: Địa chỉ công ty&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: emailcongty.company999@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0906191242 hoặc 0901317282&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: &lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;&lt;/p&gt;\r\n', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', '', 'footer', 'hienthi', 1609288313, 1704160986);
+(3, '', NULL, NULL, NULL, '', '', '', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: Địa chỉ công ty&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: email99.company@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0906191242 hoặc 0901317282&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: &lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;/p&gt;\r\n', '', '', '', '', '', 'lienhe', 'hienthi', 1609288283, 1704176165),
+(4, '', NULL, NULL, NULL, '', '', 'sneaker-shoes-vi', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: Địa chỉ công ty&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: email99.company@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0906191242 hoặc 0901317282&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: &lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;/p&gt;\r\n', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', '', 'footer', 'hienthi', 1609288313, 1704176173);
 
 -- --------------------------------------------------------
 
@@ -6214,7 +6210,7 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`id`, `id_permission`, `username`, `password`, `confirm_code`, `avatar`, `fullname`, `phone`, `email`, `address`, `gender`, `login_session`, `user_token`, `lastlogin`, `status`, `role`, `secret_key`, `birthday`, `numb`) VALUES
-(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', '861f1e5bf09d511e79a610e9d9cbc983', '1704160994', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
+(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', 'cb5fd1d6d037f3972201daba97b9f79f', '1704176246', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
 
 -- --------------------------------------------------------
 
@@ -6246,7 +6242,7 @@ INSERT INTO `table_user_limit` (`id`, `login_ip`, `login_attempts`, `attempt_tim
 CREATE TABLE `table_user_log` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_user` int(11) DEFAULT 0,
-  `ip` varchar(255) DEFAULT '0.0.0.0',
+  `ip` varchar(50) DEFAULT '0.0.0.0',
   `timelog` int(11) DEFAULT 0,
   `user_agent` mediumtext DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -6434,10 +6430,7 @@ INSERT INTO `table_user_log` (`id`, `id_user`, `ip`, `timelog`, `user_agent`) VA
 (176, 1, '::1', 1698820626, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'),
 (177, 1, '::1', 1698997809, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
 (178, 1, '::1', 1699060443, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
-(0, 1, '::1', 1700548125, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
-(0, 1, '::1', 1700794784, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'),
-(0, 1, '::1', 1702873804, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
-(0, 1, '::1', 1704160793, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36');
+(179, 1, '::1', 1704176030, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -6456,7 +6449,7 @@ CREATE TABLE `table_user_online` (
 --
 
 INSERT INTO `table_user_online` (`session`, `time`, `ip`) VALUES
-('tsnjhlov8nk7430ged3vkhtg4l', 1704160996, '::1');
+('tsnjhlov8nk7430ged3vkhtg4l', 1704176218, '::1');
 
 -- --------------------------------------------------------
 
@@ -17190,10 +17183,560 @@ ALTER TABLE `table_contact`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `table_counter`
+--
+ALTER TABLE `table_counter`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `table_coupon`
 --
 ALTER TABLE `table_coupon`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_district`
+--
+ALTER TABLE `table_district`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_excel`
+--
+ALTER TABLE `table_excel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_gallery`
+--
+ALTER TABLE `table_gallery`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_lang`
+--
+ALTER TABLE `table_lang`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_member`
+--
+ALTER TABLE `table_member`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_news`
+--
+ALTER TABLE `table_news`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_newsletter`
+--
+ALTER TABLE `table_newsletter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_news_cat`
+--
+ALTER TABLE `table_news_cat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_news_item`
+--
+ALTER TABLE `table_news_item`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_news_list`
+--
+ALTER TABLE `table_news_list`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_news_sub`
+--
+ALTER TABLE `table_news_sub`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_news_tags`
+--
+ALTER TABLE `table_news_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_order`
+--
+ALTER TABLE `table_order`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_order_detail`
+--
+ALTER TABLE `table_order_detail`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_order_status`
+--
+ALTER TABLE `table_order_status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_permission`
+--
+ALTER TABLE `table_permission`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_permission_group`
+--
+ALTER TABLE `table_permission_group`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_photo`
+--
+ALTER TABLE `table_photo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product`
+--
+ALTER TABLE `table_product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_brand`
+--
+ALTER TABLE `table_product_brand`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_cat`
+--
+ALTER TABLE `table_product_cat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_item`
+--
+ALTER TABLE `table_product_item`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_list`
+--
+ALTER TABLE `table_product_list`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_sale`
+--
+ALTER TABLE `table_product_sale`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_sale_color`
+--
+ALTER TABLE `table_product_sale_color`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_sale_size`
+--
+ALTER TABLE `table_product_sale_size`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_sub`
+--
+ALTER TABLE `table_product_sub`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_product_tags`
+--
+ALTER TABLE `table_product_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_pushonesignal`
+--
+ALTER TABLE `table_pushonesignal`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_seo`
+--
+ALTER TABLE `table_seo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_seopage`
+--
+ALTER TABLE `table_seopage`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_setting`
+--
+ALTER TABLE `table_setting`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_size`
+--
+ALTER TABLE `table_size`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_static`
+--
+ALTER TABLE `table_static`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_tags`
+--
+ALTER TABLE `table_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_user`
+--
+ALTER TABLE `table_user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_user_limit`
+--
+ALTER TABLE `table_user_limit`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_user_log`
+--
+ALTER TABLE `table_user_log`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_variants`
+--
+ALTER TABLE `table_variants`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_variants1`
+--
+ALTER TABLE `table_variants1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_ward`
+--
+ALTER TABLE `table_ward`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `table_city`
+--
+ALTER TABLE `table_city`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT for table `table_color`
+--
+ALTER TABLE `table_color`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `table_comment`
+--
+ALTER TABLE `table_comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT for table `table_comment_photo`
+--
+ALTER TABLE `table_comment_photo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `table_comment_video`
+--
+ALTER TABLE `table_comment_video`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `table_contact`
+--
+ALTER TABLE `table_contact`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `table_counter`
+--
+ALTER TABLE `table_counter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10529;
+
+--
+-- AUTO_INCREMENT for table `table_coupon`
+--
+ALTER TABLE `table_coupon`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+
+--
+-- AUTO_INCREMENT for table `table_district`
+--
+ALTER TABLE `table_district`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=706;
+
+--
+-- AUTO_INCREMENT for table `table_excel`
+--
+ALTER TABLE `table_excel`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `table_gallery`
+--
+ALTER TABLE `table_gallery`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
+--
+-- AUTO_INCREMENT for table `table_lang`
+--
+ALTER TABLE `table_lang`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=339;
+
+--
+-- AUTO_INCREMENT for table `table_member`
+--
+ALTER TABLE `table_member`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `table_news`
+--
+ALTER TABLE `table_news`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `table_newsletter`
+--
+ALTER TABLE `table_newsletter`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `table_news_cat`
+--
+ALTER TABLE `table_news_cat`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `table_news_item`
+--
+ALTER TABLE `table_news_item`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `table_news_list`
+--
+ALTER TABLE `table_news_list`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `table_news_sub`
+--
+ALTER TABLE `table_news_sub`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `table_news_tags`
+--
+ALTER TABLE `table_news_tags`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `table_order`
+--
+ALTER TABLE `table_order`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `table_order_detail`
+--
+ALTER TABLE `table_order_detail`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT for table `table_order_status`
+--
+ALTER TABLE `table_order_status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `table_permission`
+--
+ALTER TABLE `table_permission`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2127;
+
+--
+-- AUTO_INCREMENT for table `table_permission_group`
+--
+ALTER TABLE `table_permission_group`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `table_photo`
+--
+ALTER TABLE `table_photo`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `table_product`
+--
+ALTER TABLE `table_product`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `table_product_brand`
+--
+ALTER TABLE `table_product_brand`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `table_product_cat`
+--
+ALTER TABLE `table_product_cat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `table_product_item`
+--
+ALTER TABLE `table_product_item`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `table_product_list`
+--
+ALTER TABLE `table_product_list`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `table_product_sale`
+--
+ALTER TABLE `table_product_sale`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+
+--
+-- AUTO_INCREMENT for table `table_product_sale_color`
+--
+ALTER TABLE `table_product_sale_color`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `table_product_sale_size`
+--
+ALTER TABLE `table_product_sale_size`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `table_product_sub`
+--
+ALTER TABLE `table_product_sub`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `table_product_tags`
+--
+ALTER TABLE `table_product_tags`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50331664;
+
+--
+-- AUTO_INCREMENT for table `table_pushonesignal`
+--
+ALTER TABLE `table_pushonesignal`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `table_seo`
+--
+ALTER TABLE `table_seo`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=341;
+
+--
+-- AUTO_INCREMENT for table `table_seopage`
+--
+ALTER TABLE `table_seopage`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `table_setting`
+--
+ALTER TABLE `table_setting`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `table_size`
+--
+ALTER TABLE `table_size`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `table_static`
+--
+ALTER TABLE `table_static`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `table_tags`
+--
+ALTER TABLE `table_tags`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `table_user`
+--
+ALTER TABLE `table_user`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+
+--
+-- AUTO_INCREMENT for table `table_user_limit`
+--
+ALTER TABLE `table_user_limit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `table_user_log`
+--
+ALTER TABLE `table_user_log`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
+
+--
+-- AUTO_INCREMENT for table `table_variants`
+--
+ALTER TABLE `table_variants`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+
+--
+-- AUTO_INCREMENT for table `table_variants1`
+--
+ALTER TABLE `table_variants1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+
+--
+-- AUTO_INCREMENT for table `table_ward`
+--
+ALTER TABLE `table_ward`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10600;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
