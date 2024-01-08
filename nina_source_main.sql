@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2024 at 07:17 AM
+-- Generation Time: Jan 08, 2024 at 04:26 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -4032,7 +4032,9 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 (10525, 1698826231, '::1'),
 (10526, 1698986787, '::1'),
 (10527, 1698991473, '::1'),
-(10528, 1704176217, '::1');
+(10528, 1704176217, '::1'),
+(10529, 1704680507, '::1'),
+(10530, 1704681590, '::1');
 
 -- --------------------------------------------------------
 
@@ -5572,8 +5574,8 @@ INSERT INTO `table_photo` (`id`, `photo`, `file_attach`, `videomp4`, `contenten`
 (3, 'logo-2234-1405-2598.png', NULL, '', '', '', '', '', '', '', '', '', '{\"p\":\"logo-2234-1405-2598.png\",\"w\":120,\"h\":120,\"m\":\"image\\/png\"}', 'logo', 'photo_static', 0, 'hienthi', 1609237751, 1691989035),
 (4, 'favicon-1908-7433.png', NULL, '', '', '', '', '', '', '', '', '', '', 'favicon', 'photo_static', 0, 'hienthi', 1609237759, 1684212314),
 (5, '0b7bvomjcqunbsqi28d6-4568.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'popup', 'photo_static', 0, 'hienthi', 1609237771, 1672798262),
-(6, '8ychfty1h0n5masjvilf-8259.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'slide', 'photo_multi', 2, 'hienthi', 0, 1672798309),
-(7, '0b7bvomjcqunbsqi28d6-6341-2607.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'slide', 'photo_multi', 1, 'hienthi', 0, 1689322053),
+(6, 'slide-2-9203-63971-2230-4943.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'slide', 'photo_multi', 2, 'hienthi', 0, 1704681584),
+(7, 'slide-1-8072-67580-1930-1360.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'slide', 'photo_multi', 1, 'hienthi', 0, 1704681004),
 (8, 'fb-4701.png', NULL, '', '', '', '', '', '', '', 'https://www.google.com/', '', '', 'social', 'photo_multi', 1, 'hienthi', 0, 1683864530),
 (9, 'ig-9537.png', NULL, '', '', '', '', '', '', '', 'https://www.google.com/', '', '', 'social', 'photo_multi', 2, 'hienthi', 0, 1683864538),
 (10, 'yt-4795.png', NULL, '', '', '', '', '', '', '', 'https://www.google.com/', '', '', 'social', 'photo_multi', 3, 'hienthi', 0, 1683864545),
@@ -6210,7 +6212,7 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`id`, `id_permission`, `username`, `password`, `confirm_code`, `avatar`, `fullname`, `phone`, `email`, `address`, `gender`, `login_session`, `user_token`, `lastlogin`, `status`, `role`, `secret_key`, `birthday`, `numb`) VALUES
-(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', 'cb5fd1d6d037f3972201daba97b9f79f', '1704176246', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
+(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', '50b0784c81b56b415f5808c5f0c78a60', '1704683254', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
 
 -- --------------------------------------------------------
 
@@ -6430,7 +6432,8 @@ INSERT INTO `table_user_log` (`id`, `id_user`, `ip`, `timelog`, `user_agent`) VA
 (176, 1, '::1', 1698820626, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'),
 (177, 1, '::1', 1698997809, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
 (178, 1, '::1', 1699060443, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
-(179, 1, '::1', 1704176030, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36');
+(179, 1, '::1', 1704176030, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
+(180, 1, '::1', 1704680542, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -6449,7 +6452,7 @@ CREATE TABLE `table_user_online` (
 --
 
 INSERT INTO `table_user_online` (`session`, `time`, `ip`) VALUES
-('tsnjhlov8nk7430ged3vkhtg4l', 1704176218, '::1');
+('tsnjhlov8nk7430ged3vkhtg4l', 1704681590, '::1');
 
 -- --------------------------------------------------------
 
@@ -17484,7 +17487,7 @@ ALTER TABLE `table_contact`
 -- AUTO_INCREMENT for table `table_counter`
 --
 ALTER TABLE `table_counter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10529;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10531;
 
 --
 -- AUTO_INCREMENT for table `table_coupon`
@@ -17718,7 +17721,7 @@ ALTER TABLE `table_user_limit`
 -- AUTO_INCREMENT for table `table_user_log`
 --
 ALTER TABLE `table_user_log`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
 -- AUTO_INCREMENT for table `table_variants`

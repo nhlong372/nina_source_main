@@ -3,7 +3,9 @@
 $nametype = "san-pham";
 $config['product'][$nametype]['title_main'] = "Sản Phẩm";
 $config['product'][$nametype]['icon_main'] = "fas fa-boxes";
+$config['product'][$nametype]['info_main'] = true;
 $config['product'][$nametype]['dropdown'] = true;
+$config['product'][$nametype]['other'] = true;
 $config['product'][$nametype]['list'] = true;
 $config['product'][$nametype]['cat'] = true;
 $config['product'][$nametype]['item'] = false;
@@ -108,6 +110,8 @@ $config['product'][$nametype]['img_type_color'] = '.jpg|.gif|.png|.jpeg|.gif';
 $nametype = "thu-vien-anh";
 $config['product'][$nametype]['title_main'] = "Thư viện ảnh";
 $config['product'][$nametype]['icon_main'] = "fas fa-images";
+$config['product'][$nametype]['info_main'] = false;
+$config['product'][$nametype]['other'] = true;
 $config['product'][$nametype]['check'] = array("hienthi" => "Hiển thị");
 $config['product'][$nametype]['view'] = true;
 $config['product'][$nametype]['copy'] = true;
