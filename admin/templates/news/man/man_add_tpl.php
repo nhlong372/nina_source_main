@@ -24,6 +24,7 @@ if (isset($config['news'][$type]['gallery']) && count($config['news'][$type]['ga
 
 if (
     (isset($config['news'][$type]['dropdown']) && $config['news'][$type]['dropdown'] == true) ||
+    (isset($config['news'][$type]['other']) && $config['news'][$type]['other'] == true) ||
     (isset($config['news'][$type]['tags']) && $config['news'][$type]['tags'] == true) ||
     (isset($config['news'][$type]['images']) && $config['news'][$type]['images'] == true)
 ) {
@@ -114,6 +115,51 @@ if (
                 </div>
             </div>
             <div class="<?= $colRight ?>">
+                <?php if ((isset($config['news'][$type]['other']) && $config['news'][$type]['other'] == true)) { ?>
+                    <div class="card card-primary card-outline text-sm">
+                        <div class="card-header">
+                            <h3 class="card-title">Tuỳ chọn khác</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <?php $status_array = (!empty($item['status'])) ? explode(',', $item['status']) : array(); ?>
+                                <?php if($_GET['act']=='add'){?>
+                                    <?php if (isset($config['news'][$type]['check'])) {
+                                        foreach ($config['news'][$type]['check'] as $key => $value) { ?>
+                                            <div class="form-group d-inline-block mb-2 mr-2">
+                                                <label for="<?= $key ?>-checkbox" class="d-inline-block align-middle mb-0 mr-2"><?= $value ?>:</label>
+                                                <div class="custom-control custom-checkbox d-inline-block align-middle">
+                                                    <input type="checkbox" class="custom-control-input <?= $key ?>-checkbox" name="status[<?= $key ?>]" id="<?= $key ?>-checkbox" <?=($key=='hienthi') ? 'checked' : ''?> value="<?= $key ?>">
+                                                    <label for="<?= $key ?>-checkbox" class="custom-control-label"></label>
+                                                </div>
+                                            </div>
+                                        <?php }
+                                    } ?>
+                                <?php }else{ ?>
+                                    <?php if (isset($config['news'][$type]['check'])) {
+                                        foreach ($config['news'][$type]['check'] as $key => $value) { ?>
+                                            <div class="form-group d-inline-block mb-2 mr-2">
+                                                <label for="<?= $key ?>-checkbox" class="d-inline-block align-middle mb-0 mr-2"><?= $value ?>:</label>
+                                                <div class="custom-control custom-checkbox d-inline-block align-middle">
+                                                    <input type="checkbox" class="custom-control-input <?= $key ?>-checkbox" name="status[<?= $key ?>]" id="<?= $key ?>-checkbox" <?= (empty($status_array) && empty($item['id']) ? 'checked' : in_array($key, $status_array)) ? 'checked' : '' ?> value="<?= $key ?>">
+                                                    <label for="<?= $key ?>-checkbox" class="custom-control-label"></label>
+                                                </div>
+                                            </div>
+                                        <?php }
+                                    } ?>
+                                <?php } ?>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="numb" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
+                                <input type="number" class="form-control form-control-mini d-inline-block align-middle text-sm" min="0" name="data[numb]" id="numb" placeholder="Số thứ tự" value="<?= isset($item['numb']) ? $item['numb'] : 1 ?>">
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
                 <?php if (
                     (isset($config['news'][$type]['dropdown']) && $config['news'][$type]['dropdown'] == true) ||
                     (isset($config['news'][$type]['tags']) && $config['news'][$type]['tags'] == true)
@@ -224,105 +270,72 @@ if (
                 <?php } ?>
             </div>
         </div>
-        <div class="card card-primary card-outline text-sm">
-            <div class="card-header">
-                <h3 class="card-title">Thông tin <?= $config['news'][$type]['title_main'] ?></h3>
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+        <?php if(isset($config['news'][$type]['info_main']) && $config['news'][$type]['info_main'] == true) { ?>
+            <div class="card card-primary card-outline text-sm">
+                <div class="card-header">
+                    <h3 class="card-title">Thông tin <?= $config['news'][$type]['title_main'] ?></h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <?php if(isset($config['news'][$type]['dienthoai']) && $config['news'][$type]['dienthoai'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="dienthoai">Điện thoại:</label>
+                            <input type="text" class="form-control" name="data[options2][dienthoai]" id="dienthoai" placeholder="Điện thoại" value="<?=$options2['dienthoai']?>">
+                        </div>
+                    <?php } ?>
+                    <?php if(isset($config['news'][$type]['email']) && $config['news'][$type]['email'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control" name="data[options2][email]" id="email" placeholder="Email" value="<?=$options2['email']?>">
+                        </div>
+                    <?php } ?>
+                    <?php if(isset($config['news'][$type]['website']) && $config['news'][$type]['website'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="website">Website:</label>
+                            <input type="text" class="form-control" name="data[options2][website]" id="website" placeholder="Website" value="<?=$options2['website']?>">
+                        </div>
+                    <?php } ?>
+                    <?php if(isset($config['news'][$type]['facebook']) && $config['news'][$type]['facebook'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="facebook">Facebook:</label>
+                            <input type="text" class="form-control" name="data[options2][facebook]" id="facebook" placeholder="Facebook" value="<?=$options2['facebook']?>">
+                        </div>
+                    <?php } ?>
+                    <?php if(isset($config['news'][$type]['zalo']) && $config['news'][$type]['zalo'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="zalo">Zalo:</label>
+                            <input type="text" class="form-control" name="data[options2][zalo]" id="zalo" placeholder="Zalo" value="<?=$options2['zalo']?>">
+                        </div>
+                    <?php } ?>
+                    <?php if(isset($config['news'][$type]['skype']) && $config['news'][$type]['skype'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="skype">Skype:</label>
+                            <input type="text" class="form-control" name="data[options2][skype]" id="skype" placeholder="Skype" value="<?=$options2['skype']?>">
+                        </div>
+                    <?php } ?>
+                    <?php if(isset($config['news'][$type]['chucvu']) && $config['news'][$type]['chucvu'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="chucvu">Chức vụ:</label>
+                            <input type="text" class="form-control" name="data[options2][chucvu]" id="chucvu" placeholder="Chức vụ" value="<?=$options2['chucvu']?>">
+                        </div>
+                    <?php } ?>
+                    <?php if(isset($config['news'][$type]['bando']) && $config['news'][$type]['bando'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="bando">Bản đồ:</label>                        
+                            <textarea class="form-control for-seo" name="data[options2][bando]" id="bando" rows="5" placeholder="Bản đồ"><?=htmlspecialchars_decode(@$options2['bando'])?></textarea>
+                        </div>
+                    <?php } ?>
+                    <?php if(isset($config['news'][$type]['diachi']) && $config['news'][$type]['diachi'] == true) { ?>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="diachi">Địa chỉ:</label>                        
+                            <textarea class="form-control for-seo" name="data[options2][diachi]" id="diachi" rows="5" placeholder="Địa chỉ"><?=htmlspecialchars_decode(@$options2['diachi'])?></textarea>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
-            <div class="card-body">
-                <?php if(isset($config['news'][$type]['dienthoai']) && $config['news'][$type]['dienthoai'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="dienthoai">Điện thoại:</label>
-                        <input type="text" class="form-control" name="data[options2][dienthoai]" id="dienthoai" placeholder="Điện thoại" value="<?=$options2['dienthoai']?>">
-                    </div>
-                <?php } ?>
-                <?php if(isset($config['news'][$type]['email']) && $config['news'][$type]['email'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="email">Email:</label>
-                        <input type="text" class="form-control" name="data[options2][email]" id="email" placeholder="Email" value="<?=$options2['email']?>">
-                    </div>
-                <?php } ?>
-                <?php if(isset($config['news'][$type]['website']) && $config['news'][$type]['website'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="website">Website:</label>
-                        <input type="text" class="form-control" name="data[options2][website]" id="website" placeholder="Website" value="<?=$options2['website']?>">
-                    </div>
-                <?php } ?>
-                <?php if(isset($config['news'][$type]['facebook']) && $config['news'][$type]['facebook'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="facebook">Facebook:</label>
-                        <input type="text" class="form-control" name="data[options2][facebook]" id="facebook" placeholder="Facebook" value="<?=$options2['facebook']?>">
-                    </div>
-                <?php } ?>
-                <?php if(isset($config['news'][$type]['zalo']) && $config['news'][$type]['zalo'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="zalo">Zalo:</label>
-                        <input type="text" class="form-control" name="data[options2][zalo]" id="zalo" placeholder="Zalo" value="<?=$options2['zalo']?>">
-                    </div>
-                <?php } ?>
-                <?php if(isset($config['news'][$type]['skype']) && $config['news'][$type]['skype'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="skype">Skype:</label>
-                        <input type="text" class="form-control" name="data[options2][skype]" id="skype" placeholder="Skype" value="<?=$options2['skype']?>">
-                    </div>
-                <?php } ?>
-                <?php if(isset($config['news'][$type]['chucvu']) && $config['news'][$type]['chucvu'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="chucvu">Chức vụ:</label>
-                        <input type="text" class="form-control" name="data[options2][chucvu]" id="chucvu" placeholder="Chức vụ" value="<?=$options2['chucvu']?>">
-                    </div>
-                <?php } ?>
-                <?php if(isset($config['news'][$type]['bando']) && $config['news'][$type]['bando'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="bando">Bản đồ:</label>                        
-                        <textarea class="form-control for-seo" name="data[options2][bando]" id="bando" rows="5" placeholder="Bản đồ"><?=htmlspecialchars_decode(@$options2['bando'])?></textarea>
-                    </div>
-                <?php } ?>
-                <?php if(isset($config['news'][$type]['diachi']) && $config['news'][$type]['diachi'] == true) { ?>
-                    <div class="form-group col-md-4 col-sm-6">
-                        <label for="diachi">Địa chỉ:</label>                        
-                        <textarea class="form-control for-seo" name="data[options2][diachi]" id="diachi" rows="5" placeholder="Địa chỉ"><?=htmlspecialchars_decode(@$options2['diachi'])?></textarea>
-                    </div>
-                <?php } ?>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <?php $status_array = (!empty($item['status'])) ? explode(',', $item['status']) : array(); ?>
-                    <?php if($_GET['act']=='add'){?>
-                    <?php if (isset($config['news'][$type]['check'])) {
-                        foreach ($config['news'][$type]['check'] as $key => $value) { ?>
-                            <div class="form-group d-inline-block mb-2 mr-2">
-                                <label for="<?= $key ?>-checkbox" class="d-inline-block align-middle mb-0 mr-2"><?= $value ?>:</label>
-                                <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                    <input type="checkbox" class="custom-control-input <?= $key ?>-checkbox" name="status[<?= $key ?>]" id="<?= $key ?>-checkbox" <?=($key=='hienthi') ? 'checked' : ''?> value="<?= $key ?>">
-                                    <label for="<?= $key ?>-checkbox" class="custom-control-label"></label>
-                                </div>
-                            </div>
-                    <?php }
-                    } ?>
-                <?php }else{ ?>
-                    <?php if (isset($config['news'][$type]['check'])) {
-                        foreach ($config['news'][$type]['check'] as $key => $value) { ?>
-                            <div class="form-group d-inline-block mb-2 mr-2">
-                                <label for="<?= $key ?>-checkbox" class="d-inline-block align-middle mb-0 mr-2"><?= $value ?>:</label>
-                                <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                    <input type="checkbox" class="custom-control-input <?= $key ?>-checkbox" name="status[<?= $key ?>]" id="<?= $key ?>-checkbox" <?= (empty($status_array) && empty($item['id']) ? 'checked' : in_array($key, $status_array)) ? 'checked' : '' ?> value="<?= $key ?>">
-                                    <label for="<?= $key ?>-checkbox" class="custom-control-label"></label>
-                                </div>
-                            </div>
-                    <?php }
-                    } ?>
-                <?php } ?>
-
-                </div>
-                <div class="form-group">
-                    <label for="numb" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
-                    <input type="number" class="form-control form-control-mini d-inline-block align-middle text-sm" min="0" name="data[numb]" id="numb" placeholder="Số thứ tự" value="<?= isset($item['numb']) ? $item['numb'] : 1 ?>">
-                </div>
-            </div>
-        </div>
+        <?php } ?>
         <?php if (isset($flagGallery) && $flagGallery == true) { ?>
             <div class="card card-primary card-outline text-sm">
                 <div class="card-header">

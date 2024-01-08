@@ -39,7 +39,7 @@ $config = array(
     'author' => array(
         'name' => 'Long Nguyễn',
         'email' => 'nguyenhoanglong0307.nina@gmail.com',
-        'timefinish' => '24/11/2023' // thời gian update
+        'timefinish' => '08/01/2024' // thời gian update
     ),
     'arrayDomainSSL' => array(),
     'database' => array(
@@ -134,11 +134,15 @@ $config = array(
 error_reporting(($config['website']['error-reporting']) ? E_ALL : 0);
 
 /* Cấu hình http */
-if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
-    $http = 'https://';
-} else {
-    $http = 'http://';
-}
+// if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+//     $http = 'https://';
+// } else {
+//     $http = 'http://';
+// }
+
+$http = 'http://';
+if ($_SERVER["HTTPS"] == "on") {$http = 'https://';}
+
 
 /* Redirect http/https */
 if (!count($config['arrayDomainSSL']) && $http == 'https://') {
@@ -148,11 +152,6 @@ if (!count($config['arrayDomainSSL']) && $http == 'https://') {
     header("HTTP/1.1 301 Moved Permanently");
     header("Location: $good_url");
     exit;
-}
-
-/* CheckSSL */
-if (count($config['arrayDomainSSL'])) {
-    include LIBRARIES . "checkSSL.php";
 }
 
 /* Cấu hình base */

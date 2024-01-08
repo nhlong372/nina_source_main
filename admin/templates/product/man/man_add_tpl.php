@@ -23,7 +23,8 @@ if (isset($config['product'][$type]['gallery']) && count($config['product'][$typ
 }
 
 if (
-    (isset($config['product'][$type]['dropdown']) && $config['product'][$type]['dropdown'] == true) ||
+    (isset($config['product'][$type]['dropdown']) && $config['product'][$type]['dropdown'] == true) || 
+    (isset($config['product'][$type]['other']) && $config['product'][$type]['other'] == true) || 
     (isset($config['product'][$type]['brand']) && $config['product'][$type]['brand'] == true) ||
     (isset($config['product'][$type]['tags']) && $config['product'][$type]['tags'] == true) ||
     (isset($config['product'][$type]['color']) && $config['product'][$type]['color'] == true) ||
@@ -208,6 +209,52 @@ if (
                 </div>
             </div>
             <div class="<?= $colRight ?>">
+                <?php if ((isset($config['product'][$type]['other']) && $config['product'][$type]['other'] == true)) { ?>
+                    <div class="card card-primary card-outline text-sm">
+                        <div class="card-header">
+                            <h3 class="card-title">Tuỳ chọn khác</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="numb" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
+                                <input type="number" class="form-control form-control-mini d-inline-block align-middle text-sm" min="0" name="data[numb]" id="numb" placeholder="Số thứ tự" value="<?= isset($item['numb']) ? $item['numb'] : 1 ?>">
+                            </div>
+
+                            <div class="form-group">
+                                <?php $status_array = (!empty($item['status'])) ? explode(',', $item['status']) : array(); ?>
+                                <?php if($_GET['act']=='add'){?>
+                                    <?php if (isset($config['product'][$type]['check'])) {
+                                        foreach ($config['product'][$type]['check'] as $key => $value) { ?>
+                                            <div class="form-group d-inline-block mb-2 mr-2">
+                                                <label for="<?= $key ?>-checkbox" class="d-inline-block align-middle mb-0 mr-2"><?= $value ?>:</label>
+                                                <div class="custom-control custom-checkbox d-inline-block align-middle">
+                                                    <input type="checkbox" class="custom-control-input <?= $key ?>-checkbox" name="status[<?= $key ?>]" id="<?= $key ?>-checkbox" <?=($key=='hienthi') ? 'checked' : ''?> value="<?= $key ?>">
+                                                    <label for="<?= $key ?>-checkbox" class="custom-control-label"></label>
+                                                </div>
+                                            </div>
+                                        <?php }
+                                    } ?>
+                                <?php }else{ ?>
+                                    <?php if (isset($config['product'][$type]['check'])) {
+                                        foreach ($config['product'][$type]['check'] as $key => $value) { ?>
+                                            <div class="form-group d-inline-block mb-2 mr-2">
+                                                <label for="<?= $key ?>-checkbox" class="d-inline-block align-middle mb-0 mr-2"><?= $value ?>:</label>
+                                                <div class="custom-control custom-checkbox d-inline-block align-middle">
+                                                    <input type="checkbox" class="custom-control-input <?= $key ?>-checkbox" name="status[<?= $key ?>]" id="<?= $key ?>-checkbox" <?= (empty($status_array) && empty($item['id']) ? 'checked' : in_array($key, $status_array)) ? 'checked' : '' ?> value="<?= $key ?>">
+                                                    <label for="<?= $key ?>-checkbox" class="custom-control-label"></label>
+                                                </div>
+                                            </div>
+                                        <?php }
+                                    } ?>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+
                 <?php if (
                     (isset($config['product'][$type]['dropdown']) && $config['product'][$type]['dropdown'] == true) ||
                     (isset($config['product'][$type]['brand']) && $config['product'][$type]['brand'] == true) ||
@@ -339,146 +386,114 @@ if (
 
             </div>
         </div>
-        
-        <div class="card card-primary card-outline text-sm">
-            <div class="card-header">
-                <h3 class="card-title">Thông tin của <?= $config['product'][$type]['title_main'] ?></h3>
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="numb" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
-                    <input type="number" class="form-control form-control-mini d-inline-block align-middle text-sm" min="0" name="data[numb]" id="numb" placeholder="Số thứ tự" value="<?= isset($item['numb']) ? $item['numb'] : 1 ?>">
-                </div>
 
-                <div class="form-group">
-                    <?php $status_array = (!empty($item['status'])) ? explode(',', $item['status']) : array(); ?>
-                    <?php if($_GET['act']=='add'){?>
-                        <?php if (isset($config['product'][$type]['check'])) {
-                            foreach ($config['product'][$type]['check'] as $key => $value) { ?>
-                                <div class="form-group d-inline-block mb-2 mr-2">
-                                    <label for="<?= $key ?>-checkbox" class="d-inline-block align-middle mb-0 mr-2"><?= $value ?>:</label>
-                                    <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                        <input type="checkbox" class="custom-control-input <?= $key ?>-checkbox" name="status[<?= $key ?>]" id="<?= $key ?>-checkbox" <?=($key=='hienthi') ? 'checked' : ''?> value="<?= $key ?>">
-                                        <label for="<?= $key ?>-checkbox" class="custom-control-label"></label>
-                                    </div>
-                                </div>
-                            <?php }
-                        } ?>
-                    <?php }else{ ?>
-                        <?php if (isset($config['product'][$type]['check'])) {
-                            foreach ($config['product'][$type]['check'] as $key => $value) { ?>
-                                <div class="form-group d-inline-block mb-2 mr-2">
-                                    <label for="<?= $key ?>-checkbox" class="d-inline-block align-middle mb-0 mr-2"><?= $value ?>:</label>
-                                    <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                        <input type="checkbox" class="custom-control-input <?= $key ?>-checkbox" name="status[<?= $key ?>]" id="<?= $key ?>-checkbox" <?= (empty($status_array) && empty($item['id']) ? 'checked' : in_array($key, $status_array)) ? 'checked' : '' ?> value="<?= $key ?>">
-                                        <label for="<?= $key ?>-checkbox" class="custom-control-label"></label>
-                                    </div>
-                                </div>
-                            <?php }
-                        } ?>
-                    <?php } ?>
-                </div>
-
-                <div class="row">
-                    <?php if (isset($config['product'][$type]['code']) && $config['product'][$type]['code'] == true) { ?>
-                        <div class="form-group col-md-4">
-                            <label class="d-block" for="code">Mã sản phẩm:</label>
-                            <input type="text" class="form-control text-sm" name="data[code]" id="code" placeholder="Mã sản phẩm" value="<?= (!empty($flash->has('code'))) ? $flash->get('code') : @$item['code'] ?>">
-                        </div>
-                    <?php } ?>
-                    <?php if (isset($config['product'][$type]['regular_price']) && $config['product'][$type]['regular_price'] == true) { ?>
-                        <div class="form-group col-md-4">
-                            <label class="d-block" for="regular_price">Giá bán:</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control format-price regular_price text-sm" name="data[regular_price]" id="regular_price" placeholder="Giá bán" value="<?= (!empty($flash->has('regular_price'))) ? $flash->get('regular_price') : @$item['regular_price'] ?>">
-                                <div class="input-group-append">
-                                    <div class="input-group-text"><strong>VNĐ</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                    <?php if (isset($config['product'][$type]['sale_price']) && $config['product'][$type]['sale_price'] == true) { ?>
-                        <div class="form-group col-md-4">
-                            <label class="d-block" for="sale_price">Giá mới:</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control format-price sale_price text-sm" name="data[sale_price]" id="sale_price" placeholder="Giá mới" value="<?= (!empty($flash->has('sale_price'))) ? $flash->get('sale_price') : @$item['sale_price'] ?>">
-                                <div class="input-group-append">
-                                    <div class="input-group-text"><strong>VNĐ</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                    <?php if (isset($config['product'][$type]['discount']) && $config['product'][$type]['discount'] == true) { ?>
-                        <div class="form-group col-md-4">
-                            <label class="d-block" for="discount">Chiết khấu:</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control discount text-sm" name="data[discount]" id="discount" placeholder="Chiết khấu" value="<?= (!empty($flash->has('discount'))) ? $flash->get('discount') : @$item['discount'] ?>" maxlength="3" readonly>
-                                <div class="input-group-append">
-                                    <div class="input-group-text"><strong>%</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
-                <?php if(isset($config['product'][$type]['option']) && $config['product'][$type]['option'] == true) { ?>
-                    <div class="row">
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="dientich">Diện tích:</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control text-sm" name="data[options2][dientich]" id="dientich" placeholder="Diện tích" value="<?=$options2['dientich']?>">
-                                <div class="input-group-append">
-                                    <div class="input-group-text"><strong>M<sup>2</sup></strong></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="phaply">Pháp lý:</label>
-                            <input type="text" class="form-control" name="data[options2][phaply]" id="phaply" placeholder="Pháp lý" value="<?=$options2['phaply']?>">
-                        </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="nhucau">Nhu cầu:</label>
-                            <input type="text" class="form-control" name="data[options2][nhucau]" id="nhucau" placeholder="Nhu cầu" value="<?=$options2['nhucau']?>">
-                        </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="loai">Loại:</label>
-                            <input type="text" class="form-control" name="data[options2][loai]" id="loai" placeholder="Loại" value="<?=$options2['loai']?>">
-                        </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="tang">Số tầng:</label>
-                            <input type="text" class="form-control" name="data[options2][tang]" id="tang" placeholder="Số tầng" value="<?=$options2['tang']?>">
-                        </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="toa">Tòa:</label>
-                            <input type="text" class="form-control" name="data[options2][toa]" id="toa" placeholder="Tòa" value="<?=$options2['toa']?>">
-                        </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="huong">Hướng ban công:</label>
-                            <input type="text" class="form-control" name="data[options2][huong]" id="huong" placeholder="Hướng ban công" value="<?=$options2['huong']?>">
-                        </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="phongngu">Phòng ngủ:</label>
-                            <input type="text" class="form-control" name="data[options2][phongngu]" id="phongngu" placeholder="Phòng ngủ" value="<?=$options2['phongngu']?>">
-                        </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                            <label for="phongwc">Phòng wc:</label>
-                            <input type="text" class="form-control" name="data[options2][phongwc]" id="phongwc" placeholder="Phòng wc" value="<?=$options2['phongwc']?>">
-                        </div>
+        <?php if(isset($config['product'][$type]['info_main']) && $config['product'][$type]['info_main'] == true) { ?>
+            <div class="card card-primary card-outline text-sm">
+                <div class="card-header">
+                    <h3 class="card-title">Thông tin của <?= $config['product'][$type]['title_main'] ?></h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                     </div>
-                <?php } ?>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <?php if (isset($config['product'][$type]['code']) && $config['product'][$type]['code'] == true) { ?>
+                            <div class="form-group col-md-4">
+                                <label class="d-block" for="code">Mã sản phẩm:</label>
+                                <input type="text" class="form-control text-sm" name="data[code]" id="code" placeholder="Mã sản phẩm" value="<?= (!empty($flash->has('code'))) ? $flash->get('code') : @$item['code'] ?>">
+                            </div>
+                        <?php } ?>
+                        <?php if (isset($config['product'][$type]['regular_price']) && $config['product'][$type]['regular_price'] == true) { ?>
+                            <div class="form-group col-md-4">
+                                <label class="d-block" for="regular_price">Giá bán:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control format-price regular_price text-sm" name="data[regular_price]" id="regular_price" placeholder="Giá bán" value="<?= (!empty($flash->has('regular_price'))) ? $flash->get('regular_price') : @$item['regular_price'] ?>">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><strong>VNĐ</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <?php if (isset($config['product'][$type]['sale_price']) && $config['product'][$type]['sale_price'] == true) { ?>
+                            <div class="form-group col-md-4">
+                                <label class="d-block" for="sale_price">Giá mới:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control format-price sale_price text-sm" name="data[sale_price]" id="sale_price" placeholder="Giá mới" value="<?= (!empty($flash->has('sale_price'))) ? $flash->get('sale_price') : @$item['sale_price'] ?>">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><strong>VNĐ</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <?php if (isset($config['product'][$type]['discount']) && $config['product'][$type]['discount'] == true) { ?>
+                            <div class="form-group col-md-4">
+                                <label class="d-block" for="discount">Chiết khấu:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control discount text-sm" name="data[discount]" id="discount" placeholder="Chiết khấu" value="<?= (!empty($flash->has('discount'))) ? $flash->get('discount') : @$item['discount'] ?>" maxlength="3" readonly>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><strong>%</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <?php if(isset($config['product'][$type]['option']) && $config['product'][$type]['option'] == true) { ?>
+                        <div class="row">
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="dientich">Diện tích:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control text-sm" name="data[options2][dientich]" id="dientich" placeholder="Diện tích" value="<?=$options2['dientich']?>">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><strong>M<sup>2</sup></strong></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="phaply">Pháp lý:</label>
+                                <input type="text" class="form-control" name="data[options2][phaply]" id="phaply" placeholder="Pháp lý" value="<?=$options2['phaply']?>">
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="nhucau">Nhu cầu:</label>
+                                <input type="text" class="form-control" name="data[options2][nhucau]" id="nhucau" placeholder="Nhu cầu" value="<?=$options2['nhucau']?>">
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="loai">Loại:</label>
+                                <input type="text" class="form-control" name="data[options2][loai]" id="loai" placeholder="Loại" value="<?=$options2['loai']?>">
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="tang">Số tầng:</label>
+                                <input type="text" class="form-control" name="data[options2][tang]" id="tang" placeholder="Số tầng" value="<?=$options2['tang']?>">
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="toa">Tòa:</label>
+                                <input type="text" class="form-control" name="data[options2][toa]" id="toa" placeholder="Tòa" value="<?=$options2['toa']?>">
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="huong">Hướng ban công:</label>
+                                <input type="text" class="form-control" name="data[options2][huong]" id="huong" placeholder="Hướng ban công" value="<?=$options2['huong']?>">
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="phongngu">Phòng ngủ:</label>
+                                <input type="text" class="form-control" name="data[options2][phongngu]" id="phongngu" placeholder="Phòng ngủ" value="<?=$options2['phongngu']?>">
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-4">
+                                <label for="phongwc">Phòng wc:</label>
+                                <input type="text" class="form-control" name="data[options2][phongwc]" id="phongwc" placeholder="Phòng wc" value="<?=$options2['phongwc']?>">
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
-        </div>
+        <?php } ?>
         
         <?php if (isset($flagGallery) && $flagGallery == true) { ?>
             <div class="card card-primary card-outline text-sm">

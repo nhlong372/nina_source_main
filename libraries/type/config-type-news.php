@@ -3,7 +3,9 @@
 $nametype = "tin-tuc";
 $config['news'][$nametype]['title_main'] = "Tin tức";
 $config['news'][$nametype]['icon_main'] = "fas fa-book";
+$config['news'][$nametype]['info_main'] = false;
 $config['news'][$nametype]['dropdown'] = false;
+$config['news'][$nametype]['other'] = true;
 $config['news'][$nametype]['list'] = false;
 $config['news'][$nametype]['tags'] = false;
 $config['news'][$nametype]['view'] = true;
@@ -77,6 +79,7 @@ $config['news'][$nametype]['img_type_list'] = '.jpg|.gif|.png|.jpeg|.gif';*/
 /*$nametype = "tuyen-dung";
 $config['news'][$nametype]['title_main'] = "Tuyển dụng";
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+$config['news'][$nametype]['other'] = true;
 $config['news'][$nametype]['view'] = true;
 $config['news'][$nametype]['slug'] = true;
 $config['news'][$nametype]['copy'] = true;
@@ -96,6 +99,7 @@ $config['news'][$nametype]['notadd'] = '';//khongthemxoa*/
 $nametype = "chinh-sach";
 $config['news'][$nametype]['title_main'] = "Chính sách";
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+$config['news'][$nametype]['other'] = true;
 $config['news'][$nametype]['view'] = true;
 $config['news'][$nametype]['slug'] = true;
 $config['news'][$nametype]['copy'] = true;
@@ -113,6 +117,7 @@ $config['news'][$nametype]['notadd'] = '';//khongthemxoa
 /* Chi nhánh */
 /*$nametype = "chi-nhanh";
 $config['news'][$nametype]['title_main'] = "Chi nhánh";
+$config['news'][$nametype]['other'] = true;
 $config['news'][$nametype]['copy'] = true;
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");  
 $config['news'][$nametype]['bando'] = true;  */ 
@@ -120,6 +125,7 @@ $config['news'][$nametype]['bando'] = true;  */
 /* Tiêu chí */
 /*$nametype = "tieu-chi";
 $config['news'][$nametype]['title_main'] = "Tiêu chí";
+$config['news'][$nametype]['other'] = true;
 $config['news'][$nametype]['copy'] = true;
 $config['news'][$nametype]['copy_image'] = false;
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
@@ -136,6 +142,7 @@ $config['news'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.J
 /* Ý kiến khách hàng */
 /*$nametype = "y-kien";
 $config['news'][$nametype]['title_main'] = "Ý kiến khách hàng";
+$config['news'][$nametype]['other'] = true;
 $config['news'][$nametype]['copy'] = true;
 $config['news'][$nametype]['copy_image'] = false;
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
@@ -152,6 +159,7 @@ $config['news'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.J
 /* Hỗ trợ trực tuyến */
 /*$nametype = "ho-tro-truc-tuyen";
 $config['news'][$nametype]['title_main'] = "Hỗ trợ trực tuyến";
+$config['news'][$nametype]['other'] = true;
 $config['news'][$nametype]['dienthoai'] = true;
 $config['news'][$nametype]['email'] = true;
 $config['news'][$nametype]['facebook'] = true;
@@ -174,6 +182,7 @@ $config['news'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.J
 /* Slogan bài viết */
 /*$nametype = "slogan-bv";
 $config['news'][$nametype]['title_main'] = "Slogan bài viết";
+$config['news'][$nametype]['other'] = true;
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
 $config['news'][$nametype]['notadd'] = '';//khongthemxoa
 $config['news'][$nametype]['desc'] = true;*/
@@ -183,6 +192,7 @@ if(CARTSITE==true){
 $nametype = "hinh-thuc-thanh-toan";
 $config['news']['hinh-thuc-thanh-toan']['title_main'] = "Hình thức thanh toán";
 $config['news']['hinh-thuc-thanh-toan']['check'] = array("hienthi" => "Hiển thị");
+$config['news']['hinh-thuc-thanh-toan']['other'] = true;
 $config['news']['hinh-thuc-thanh-toan']['copy'] = true;
 $config['news']['hinh-thuc-thanh-toan']['desc'] = true;
 }

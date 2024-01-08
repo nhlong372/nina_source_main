@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2023 at 04:23 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Jan 08, 2024 at 04:26 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,12 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `table_city` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `level` varchar(100) DEFAULT NULL,
+  `code` varchar(2) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -116,14 +116,14 @@ INSERT INTO `table_city` (`id`, `name`, `slug`, `level`, `code`, `numb`, `status
 
 CREATE TABLE `table_color` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `color` varchar(15) DEFAULT NULL,
   `type_show` tinyint(1) DEFAULT 0,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -150,14 +150,14 @@ CREATE TABLE `table_comment` (
   `id_parent` int(11) DEFAULT 0,
   `id_variant` int(11) DEFAULT 0,
   `star` int(11) DEFAULT 0,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `poster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `poster` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_posted` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -197,7 +197,7 @@ INSERT INTO `table_comment` (`id`, `id_parent`, `id_variant`, `star`, `title`, `
 CREATE TABLE `table_comment_photo` (
   `id` int(11) NOT NULL,
   `id_parent` int(11) DEFAULT 0,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `photo` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -227,8 +227,8 @@ INSERT INTO `table_comment_photo` (`id`, `id_parent`, `photo`) VALUES
 CREATE TABLE `table_comment_video` (
   `id` int(11) NOT NULL,
   `id_parent` int(11) DEFAULT 0,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `photo` varchar(255) DEFAULT NULL,
+  `video` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -249,15 +249,15 @@ INSERT INTO `table_comment_video` (`id`, `id_parent`, `photo`, `video`) VALUES
 
 CREATE TABLE `table_contact` (
   `id` int(11) UNSIGNED NOT NULL,
-  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `notes` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `content` mediumtext DEFAULT NULL,
+  `notes` mediumtext DEFAULT NULL,
+  `address` mediumtext DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0,
   `numb` int(11) DEFAULT 0
@@ -272,7 +272,7 @@ CREATE TABLE `table_contact` (
 CREATE TABLE `table_counter` (
   `id` int(11) NOT NULL,
   `tm` int(11) DEFAULT 0,
-  `ip` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '0.0.0.0'
+  `ip` varchar(50) DEFAULT '0.0.0.0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4031,7 +4031,10 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 (10524, 1698825203, '::1'),
 (10525, 1698826231, '::1'),
 (10526, 1698986787, '::1'),
-(10527, 1698991473, '::1');
+(10527, 1698991473, '::1'),
+(10528, 1704176217, '::1'),
+(10529, 1704680507, '::1'),
+(10530, 1704681590, '::1');
 
 -- --------------------------------------------------------
 
@@ -4041,7 +4044,7 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 
 CREATE TABLE `table_coupon` (
   `id` int(11) UNSIGNED NOT NULL,
-  `ma` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ma` varchar(30) DEFAULT NULL,
   `stt` int(11) DEFAULT 0,
   `loai` int(1) DEFAULT 0,
   `tinhtrang` int(1) DEFAULT 0,
@@ -4072,12 +4075,12 @@ INSERT INTO `table_coupon` (`id`, `ma`, `stt`, `loai`, `tinhtrang`, `chietkhau`,
 CREATE TABLE `table_district` (
   `id` int(11) NOT NULL,
   `id_city` int(11) DEFAULT 0,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `code` varchar(3) DEFAULT NULL,
+  `level` varchar(100) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -4802,8 +4805,8 @@ INSERT INTO `table_district` (`id`, `id_city`, `name`, `slug`, `code`, `level`, 
 
 CREATE TABLE `table_excel` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -4831,19 +4834,19 @@ INSERT INTO `table_excel` (`id`, `photo`, `type`, `numb`) VALUES
 CREATE TABLE `table_gallery` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_parent` int(11) DEFAULT 0,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hash` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `hash` varchar(20) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
   `id_color` int(11) DEFAULT 0,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link_video` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `link_video` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `com` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kind` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `val` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `com` varchar(255) DEFAULT NULL,
+  `kind` varchar(30) DEFAULT NULL,
+  `val` varchar(30) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -4890,9 +4893,9 @@ INSERT INTO `table_gallery` (`id`, `id_parent`, `photo`, `hash`, `nameen`, `name
 
 CREATE TABLE `table_lang` (
   `id` int(11) UNSIGNED NOT NULL,
-  `lang_define` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `langvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `langen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lang_define` mediumtext DEFAULT NULL,
+  `langvi` mediumtext DEFAULT NULL,
+  `langen` mediumtext DEFAULT NULL,
   `numb` int(11) UNSIGNED DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -5088,18 +5091,18 @@ INSERT INTO `table_lang` (`id`, `lang_define`, `langvi`, `langen`, `numb`) VALUE
 CREATE TABLE `table_member` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_social` tinyint(1) DEFAULT 0,
-  `username` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `confirm_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fullname` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `username` varchar(225) DEFAULT NULL,
+  `password` varchar(225) DEFAULT NULL,
+  `confirm_code` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `fullname` varchar(225) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(225) DEFAULT NULL,
   `gender` tinyint(1) DEFAULT 0,
-  `login_session` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `lastlogin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `login_session` varchar(255) DEFAULT NULL,
+  `lastlogin` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `birthday` int(11) DEFAULT 0,
   `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5123,22 +5126,22 @@ CREATE TABLE `table_news` (
   `id_item` int(11) DEFAULT 0,
   `id_cat` int(11) DEFAULT 0,
   `id_sub` int(11) DEFAULT 0,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options2` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `photo2` varchar(255) DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `options2` mediumtext NOT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0,
   `view` int(11) DEFAULT 0
@@ -5149,7 +5152,7 @@ CREATE TABLE `table_news` (
 --
 
 INSERT INTO `table_news` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `photo`, `photo2`, `file_attach`, `options`, `options2`, `slugvi`, `slugen`, `contenten`, `contentvi`, `descen`, `descvi`, `nameen`, `namevi`, `numb`, `status`, `type`, `date_created`, `date_updated`, `view`) VALUES
-(1, 1, 1, 1, 1, '11182127794613520634170243468346421097717n-1613.jpg', 'icon-t6m-2108.png', '03061912230306191233030619122903061912420306191247-1884.docx', '{\"p\":\"11182127794613520634170243468346421097717n-1613.jpg\",\"w\":810,\"h\":540,\"m\":\"image\\/jpeg\"}', '{\"chucvu\":\"\"}', 'nike-gioi-thieu-giay-da-bong-bang-dan-doc-dao', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Nike introduces a unique taped soccer shoe', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 1, 'noibat,hienthi', 'tin-tuc', 1609287033, 1689580271, 40),
+(1, 1, 1, 1, 1, '11182127794613520634170243468346421097717n-1613.jpg', 'icon-t6m-2108.png', '03061912230306191233030619122903061912420306191247-1884.docx', '{\"p\":\"11182127794613520634170243468346421097717n-1613.jpg\",\"w\":810,\"h\":540,\"m\":\"image\\/jpeg\"}', '{\"chucvu\":\"\"}', 'nike-gioi-thieu-giay-da-bong-bang-dan-doc-dao', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Nike introduces a unique taped soccer shoe', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 1, 'noibat,hienthi', 'tin-tuc', 1609287033, 1704176210, 40),
 (2, 2, 3, 3, 0, '6783077-cool-wallpapers-hd-3332.jpg', NULL, NULL, '{\"p\":\"news-1-4178-8729.jpeg\",\"w\":270,\"h\":200,\"m\":\"image\\/jpeg\"}', '', 'nike-zoom-cong-nghe-dem-giay-thanh-cong-nhat-cua-nike', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Nike Zoom Nike\'s most successful shoe cushioning technology', 'Nike Zoom công nghệ đệm giày thành công nhất của Nike', 2, 'noibat,hienthi', 'tin-tuc', 1609287279, 1673331264, 2),
 (3, 1, 2, 1, 0, '109457207472462487042312982085258215758710n-9953.jpg', NULL, NULL, '', '', 'ga-khong-lo-nike-dong-cua-hang-loat-o-trung-quoc-vi-corona', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Giant Nike mass stores in China because of corona', 'Gã khổng lồ Nike đóng cửa hàng loạt ở Trung Quốc vì corona', 3, 'noibat,hienthi', 'tin-tuc', 1609287411, 1673331271, 0),
 (4, 2, 0, 4, 0, 'yamaha-sirius-ban-do-kieng-dep-lung-linh-518-1457412386-56de592206103-1056.jpg', NULL, NULL, '{\"p\":\"yamaha-sirius-ban-do-kieng-dep-lung-linh-518-1457412386-56de592206103-1056.jpg\",\"w\":960,\"h\":720,\"m\":\"image\\/jpeg\"}', '', 'can-canh-nike-airmax-97-voi-day-giay-thong-minh-cuc-doc', '', '&lt;p&gt;Frank Rudy was the first person to have the idea of ​​putting air cushioning in a shoe. His inspiration comes from the night set designs of spacecraft at NASA - where he works every day.&lt;/p&gt;\r\n\r\n&lt;p&gt;Immediately after the idea came up, he approached Nike\'s development department. Realizing the potential of the technology, Nike tried it out with its own shoe, Nike Tailwind, and in 1978. This product had an air cushion inside. However, this air cushion is completely hidden in the shoe.&lt;/p&gt;\r\n\r\n&lt;p&gt;This product did not get much success after its inception and was quickly forgotten. See also: Top 7 of the best shoe cushion technologies by Nike&lt;/p&gt;\r\n', '&lt;p&gt;Frank Rudy là người đầu tiên có ý tưởng đặt đệm khí vào một chiếc giày. Nguồn cảm hứng của anh đến từ những thiết kế bộ đêm của tàu vũ trụ tại NASA - nơi anh làm việc hằng ngày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ngay sau khi nảy ra ý tưởng này, anh lập tức tiếp cận với bộ phận phát triển của Nike. Nhận thấy tiềm năng của công nghệ, Nike đã thử áp dụng thử với sản phẩm giày của mình là Nike Tailwind và năm 1978.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sản phẩm này có đệm khí ở bên trong. Tuy nhiên, lớp đệm khí này lại ẩn hoàn toàn trong giày. Sau khi ra đời, sản phẩm này không nhận được nhiều sự thành công cho lắm do đó nhanh chóng bị lãng quên.&lt;/p&gt;\r\n\r\n&lt;p&gt;Xem thêm: &lt;a href=&quot;https://thethao247.vn/318-top-7-cong-nghe-dem-giay-ti-do-cua-nike-d177270.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;Top 7 công nghệ đệm giày tốt nhất của Nike&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;1987, Nike Air Max 1, đôi giày Air Max đầu tiên ra đời&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/08/air-max-1-nike-air-max.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike Air Max 1 (ảnh: sneakerfreaker.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Tinker Hatfield - nhà thiết kế chính của Nike, được coi là cha đẻ của Air Max và là người đưa những bộ đệm này trở nên có thể nhìn thấy được.&lt;/p&gt;\r\n\r\n&lt;p&gt;Ông nảy ra ý tưởng đưa lớp đệm Air có thể nhìn thấy được quan sát những lớp kính của Trung tâm triển lãm Pompidou Centre tại Paris. Ngày sau khi trở về Mỹ ông bắt tay vào thiết kế bộ đệm với càng nhiều không khí càng tốt. Từ đây, thuật ngữ &quot;không khí tối đa&quot; Maximum Air được gọi tắt là Air Max ra đời.&lt;/p&gt;\r\n\r\n&lt;p&gt;Năm 1987, sản phẩm Nike Air Max 1 ra đời. Với bộ đệm khí có thể nhìn thấy ở đế giày. Ngay lập tức đôi giày đem lại sự chú ý của thị trường và bán rất chạy.&lt;/p&gt;\r\n\r\n&lt;p&gt;Trong những năm sau đó, Nike tiếp tục nỗ lực để cải tiến bộ đệm này với mục tiêu đệm càng nhiều khí càng tốt. 3 phiên bản Air Max ra đời trong thời gian này là Air Max 90 (1990), Air Max 180 (1991), Air Max 93 (1993).&lt;/p&gt;\r\n\r\n&lt;p&gt;Tuy nhiên tại thời điểm này, tất cả các mẫu đều có bộ đệm khí chỉ có thể được đặt ở phần gót giày. Điều đồng nghĩa với phần mũi và giữa bàn chân vẫn chưa được bảo vệ với đệm không khí.&lt;/p&gt;\r\n', 'The Nike Phantom GT are soccer boots created from the analysis of large amounts of data from players and unique tape technology.', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', 'Close-up of Nike Airmax 97 with unique smart shoelaces', 'Cận cảnh Nike Airmax 97 với dây giày thông minh cực độc', 4, 'noibat,hienthi', 'tin-tuc', 1609287457, 1673331278, 1),
@@ -5174,17 +5177,17 @@ INSERT INTO `table_news` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `photo
 
 CREATE TABLE `table_newsletter` (
   `id` int(11) UNSIGNED NOT NULL,
-  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `notes` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `confirm_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `content` mediumtext DEFAULT NULL,
+  `notes` varchar(1024) DEFAULT NULL,
+  `confirm_status` varchar(255) DEFAULT NULL,
+  `address` mediumtext DEFAULT NULL,
+  `type` varchar(100) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0,
   `numb` int(11) DEFAULT 0
@@ -5199,19 +5202,19 @@ CREATE TABLE `table_newsletter` (
 CREATE TABLE `table_news_cat` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_list` int(11) DEFAULT 0,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5226,19 +5229,19 @@ CREATE TABLE `table_news_item` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_list` int(11) DEFAULT 0,
   `id_cat` int(11) DEFAULT 0,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_updated` int(11) DEFAULT 0,
   `date_created` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5251,19 +5254,19 @@ CREATE TABLE `table_news_item` (
 
 CREATE TABLE `table_news_list` (
   `id` int(11) UNSIGNED NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5279,19 +5282,19 @@ CREATE TABLE `table_news_sub` (
   `id_list` int(11) DEFAULT 0,
   `id_cat` int(11) DEFAULT 0,
   `id_item` int(11) DEFAULT 0,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_updated` int(11) DEFAULT 0,
   `date_created` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5317,11 +5320,11 @@ CREATE TABLE `table_news_tags` (
 CREATE TABLE `table_order` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_user` int(11) DEFAULT 0,
-  `code` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(25) DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `order_payment` int(11) DEFAULT 0,
   `temp_price` double DEFAULT 0,
   `total_price` double DEFAULT 0,
@@ -5329,8 +5332,8 @@ CREATE TABLE `table_order` (
   `district` int(11) DEFAULT 0,
   `ward` int(11) DEFAULT 0,
   `ship_price` double DEFAULT 0,
-  `requirements` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `notes` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `requirements` mediumtext DEFAULT NULL,
+  `notes` mediumtext DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `order_status` int(11) DEFAULT 0,
   `numb` int(11) DEFAULT 0
@@ -5342,8 +5345,7 @@ CREATE TABLE `table_order` (
 
 INSERT INTO `table_order` (`id`, `id_user`, `code`, `fullname`, `phone`, `address`, `email`, `order_payment`, `temp_price`, `total_price`, `city`, `district`, `ward`, `ship_price`, `requirements`, `notes`, `date_created`, `order_status`, `numb`) VALUES
 (32, 0, 'QTQYJQ', 'Lưu Thành Công', '0988900981', 'IT test web, Không có mua, Xã Tân Hòa, Huyện Bình Gia, Tỉnh Lạng Sơn', 'tvcong@gmail.com', 9, 77777, 77777, 13, 136, 2317, 0, '123123123', '', 1673063260, 1, 1),
-(33, 0, 'JW9J7H', 'Lê thanh Son', '0986655456', 'ccc, Xã Tiên Lữ, Huyện Lập Thạch, Tỉnh Vĩnh Phúc', 'lethanhson.nina@gmail.com', 10, 250000, 250000, 17, 183, 3118, 0, 'ccccc', '', 1673314038, 1, 1),
-(34, 0, 'X0EIPP', 'Long Beo', '0903137252', '63/ 1 Phú Định Nè, Phường 16, Quận 8, Thành phố Hồ Chí Minh', 'nguyenhoanglong0307@gmail.com', 9, 1650000, 1650000, 50, 564, 8910, 0, 'fasdfasdfasdfasdfasdfasdfasdfqwerqwer', '', 1690442790, 1, 1);
+(33, 0, 'JW9J7H', 'Lê thanh Son', '0986655456', 'ccc, Xã Tiên Lữ, Huyện Lập Thạch, Tỉnh Vĩnh Phúc', 'lethanhson.nina@gmail.com', 10, 250000, 250000, 17, 183, 3118, 0, 'ccccc', '', 1673314038, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -5355,11 +5357,11 @@ CREATE TABLE `table_order_detail` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_order` int(11) DEFAULT 0,
   `id_product` int(11) DEFAULT 0,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `size` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
+  `size` varchar(255) DEFAULT NULL,
   `regular_price` double DEFAULT 0,
   `sale_price` double DEFAULT 0,
   `quantity` int(11) DEFAULT 0
@@ -5384,9 +5386,9 @@ INSERT INTO `table_order_detail` (`id`, `id_order`, `id_product`, `photo`, `name
 
 CREATE TABLE `table_order_status` (
   `id` int(11) NOT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `class_order` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `namevi` varchar(255) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `class_order` varchar(30) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5409,7 +5411,7 @@ INSERT INTO `table_order_status` (`id`, `namevi`, `nameen`, `class_order`) VALUE
 CREATE TABLE `table_permission` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_permission_group` int(11) DEFAULT 0,
-  `permission` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `permission` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5519,9 +5521,9 @@ INSERT INTO `table_permission` (`id`, `id_permission_group`, `permission`) VALUE
 
 CREATE TABLE `table_permission_group` (
   `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5542,22 +5544,22 @@ INSERT INTO `table_permission_group` (`id`, `name`, `numb`, `status`, `date_crea
 
 CREATE TABLE `table_photo` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `videomp4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link_video` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `act` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `videomp4` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `link` mediumtext DEFAULT NULL,
+  `link_video` mediumtext DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `act` varchar(30) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5572,8 +5574,8 @@ INSERT INTO `table_photo` (`id`, `photo`, `file_attach`, `videomp4`, `contenten`
 (3, 'logo-2234-1405-2598.png', NULL, '', '', '', '', '', '', '', '', '', '{\"p\":\"logo-2234-1405-2598.png\",\"w\":120,\"h\":120,\"m\":\"image\\/png\"}', 'logo', 'photo_static', 0, 'hienthi', 1609237751, 1691989035),
 (4, 'favicon-1908-7433.png', NULL, '', '', '', '', '', '', '', '', '', '', 'favicon', 'photo_static', 0, 'hienthi', 1609237759, 1684212314),
 (5, '0b7bvomjcqunbsqi28d6-4568.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'popup', 'photo_static', 0, 'hienthi', 1609237771, 1672798262),
-(6, '8ychfty1h0n5masjvilf-8259.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'slide', 'photo_multi', 2, 'hienthi', 0, 1672798309),
-(7, '0b7bvomjcqunbsqi28d6-6341-2607.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'slide', 'photo_multi', 1, 'hienthi', 0, 1689322053),
+(6, 'slide-2-9203-63971-2230-4943.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'slide', 'photo_multi', 2, 'hienthi', 0, 1704681584),
+(7, 'slide-1-8072-67580-1930-1360.jpg', NULL, '', '', '', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', 'https://www.google.com/', '', '', 'slide', 'photo_multi', 1, 'hienthi', 0, 1704681004),
 (8, 'fb-4701.png', NULL, '', '', '', '', '', '', '', 'https://www.google.com/', '', '', 'social', 'photo_multi', 1, 'hienthi', 0, 1683864530),
 (9, 'ig-9537.png', NULL, '', '', '', '', '', '', '', 'https://www.google.com/', '', '', 'social', 'photo_multi', 2, 'hienthi', 0, 1683864538),
 (10, 'yt-4795.png', NULL, '', '', '', '', '', '', '', 'https://www.google.com/', '', '', 'social', 'photo_multi', 3, 'hienthi', 0, 1683864545),
@@ -5611,30 +5613,30 @@ CREATE TABLE `table_product` (
   `id_cat` int(11) DEFAULT 0,
   `id_sub` int(11) DEFAULT 0,
   `id_brand` int(11) DEFAULT 0,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options2` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `photo2` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `options2` mediumtext NOT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `code` varchar(30) DEFAULT NULL,
   `regular_price` double DEFAULT 0,
   `discount` double DEFAULT 0,
   `sale_price` double DEFAULT 0,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0,
   `view` int(11) DEFAULT 0,
-  `size` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `color` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `size` text NOT NULL,
+  `color` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5663,19 +5665,19 @@ INSERT INTO `table_product` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `id
 
 CREATE TABLE `table_product_brand` (
   `id` int(11) NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5702,19 +5704,19 @@ INSERT INTO `table_product_brand` (`id`, `slugvi`, `slugen`, `contenten`, `conte
 CREATE TABLE `table_product_cat` (
   `id` int(11) NOT NULL,
   `id_list` int(11) DEFAULT 0,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5737,19 +5739,19 @@ CREATE TABLE `table_product_item` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_list` int(11) DEFAULT 0,
   `id_cat` int(11) DEFAULT 0,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_updated` int(11) DEFAULT 0,
   `date_created` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5762,19 +5764,19 @@ CREATE TABLE `table_product_item` (
 
 CREATE TABLE `table_product_list` (
   `id` int(11) NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5863,7 +5865,7 @@ CREATE TABLE `table_product_sale_color` (
   `id` int(11) NOT NULL,
   `id_parent` int(11) NOT NULL,
   `id_color` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `table_product_sale_color`
@@ -5885,7 +5887,7 @@ CREATE TABLE `table_product_sale_size` (
   `id` int(11) NOT NULL,
   `id_parent` int(11) NOT NULL,
   `id_size` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `table_product_sale_size`
@@ -5906,19 +5908,19 @@ CREATE TABLE `table_product_sub` (
   `id_list` int(11) DEFAULT 0,
   `id_cat` int(11) DEFAULT 0,
   `id_item` int(11) DEFAULT 0,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `date_updated` int(11) DEFAULT 0,
   `date_created` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5950,10 +5952,10 @@ INSERT INTO `table_product_tags` (`id`, `id_parent`, `id_tags`) VALUES
 
 CREATE TABLE `table_pushonesignal` (
   `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `description` mediumtext DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -5975,17 +5977,17 @@ INSERT INTO `table_pushonesignal` (`id`, `name`, `link`, `photo`, `description`,
 CREATE TABLE `table_seo` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_parent` int(11) DEFAULT 0,
-  `com` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `act` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `titlevi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keywordsvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descriptionvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `titleen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keywordsen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descriptionen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `schemavi` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `schemaen` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `com` varchar(30) DEFAULT NULL,
+  `act` varchar(30) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `titlevi` mediumtext DEFAULT NULL,
+  `keywordsvi` mediumtext DEFAULT NULL,
+  `descriptionvi` mediumtext DEFAULT NULL,
+  `titleen` mediumtext DEFAULT NULL,
+  `keywordsen` mediumtext DEFAULT NULL,
+  `descriptionen` mediumtext DEFAULT NULL,
+  `schemavi` text DEFAULT NULL,
+  `schemaen` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -5993,7 +5995,7 @@ CREATE TABLE `table_seo` (
 --
 
 INSERT INTO `table_seo` (`id`, `id_parent`, `com`, `act`, `type`, `titlevi`, `keywordsvi`, `descriptionvi`, `titleen`, `keywordsen`, `descriptionen`, `schemavi`, `schemaen`) VALUES
-(316, 0, 'setting', 'update', 'setting', 'Tên công ty', 'Tên công ty ', 'Tên công ty', '', '', '', '', ''),
+(338, 0, 'setting', 'update', 'setting', 'Tên công ty', 'Tên công ty ', 'Tên công ty', '', '', '', '', ''),
 (110, 1, 'product', 'man_list', 'san-pham', 'Giày nam', 'Giày nam', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'Men\'s shoes', 'Men\'s shoes', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
 (6, 2, 'product', 'man_list', 'san-pham', 'Giày nữ', 'Giày nữ', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'Women\'s shoes', 'Women\'s shoes', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
 (111, 1, 'product', 'man_cat', 'san-pham', 'Giày tây đế cao', 'Giày tây đế cao', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'High heels', 'High heels', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
@@ -6013,7 +6015,7 @@ INSERT INTO `table_seo` (`id`, `id_parent`, `com`, `act`, `type`, `titlevi`, `ke
 (219, 6, 'product', 'man', 'san-pham', 'Giày Slip On Ultraboost 25', 'Giày Slip On Ultraboost 25', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót.  Thiết kế kh', 'Slip On Ultraboost 25', 'Slip On Ultraboost 25', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute. The wireles', '', ''),
 (336, 7, 'product', 'man', 'san-pham', 'Giày Slip On Ultraboost 26', 'Giày Slip On Ultraboost 26', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót.  Thiết kế kh', '', '', '', '', ''),
 (332, 8, 'product', 'man', 'san-pham', 'Giày Slip On Ultraboost 27', 'Giày Slip On Ultraboost 27', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót.  Thiết kế kh', '', '', '', '', ''),
-(323, 1, 'news', 'man', 'tin-tuc', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
+(340, 1, 'news', 'man', 'tin-tuc', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 'Nike giới thiệu giày đá bóng băng dán độc đáo', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
 (244, 2, 'news', 'man', 'tin-tuc', 'Nike Zoom công nghệ đệm giày thành công nhất của Nike', 'Nike Zoom công nghệ đệm giày thành công nhất của Nike', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
 (245, 3, 'news', 'man', 'tin-tuc', 'Gã khổng lồ Nike đóng cửa hàng loạt ở Trung Quốc vì corona', 'Gã khổng lồ Nike đóng cửa hàng loạt ở Trung Quốc vì corona', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
 (246, 4, 'news', 'man', 'tin-tuc', 'Cận cảnh Nike Airmax 97 với dây giày thông minh cực độc', 'Cận cảnh Nike Airmax 97 với dây giày thông minh cực độc', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
@@ -6039,15 +6041,15 @@ INSERT INTO `table_seo` (`id`, `id_parent`, `com`, `act`, `type`, `titlevi`, `ke
 
 CREATE TABLE `table_seopage` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `titlevi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keywordsvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descriptionvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `titleen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keywordsen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descriptionen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `titlevi` mediumtext DEFAULT NULL,
+  `keywordsvi` mediumtext DEFAULT NULL,
+  `descriptionvi` mediumtext DEFAULT NULL,
+  `titleen` mediumtext DEFAULT NULL,
+  `keywordsen` mediumtext DEFAULT NULL,
+  `descriptionen` mediumtext DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -6070,13 +6072,13 @@ INSERT INTO `table_seopage` (`id`, `photo`, `options`, `type`, `titlevi`, `keywo
 
 CREATE TABLE `table_setting` (
   `id` int(11) NOT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `mastertool` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `headjs` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `bodyjs` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `analytics` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `options` mediumtext DEFAULT NULL,
+  `mastertool` mediumtext DEFAULT NULL,
+  `headjs` mediumtext DEFAULT NULL,
+  `bodyjs` mediumtext DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `analytics` mediumtext DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -6084,7 +6086,7 @@ CREATE TABLE `table_setting` (
 --
 
 INSERT INTO `table_setting` (`id`, `options`, `mastertool`, `headjs`, `bodyjs`, `namevi`, `nameen`, `analytics`) VALUES
-(1, '{\"mailertype\":\"1\",\"ip_host\":\"120.72.119.29\",\"port_host\":\"25\",\"secure_host\":\"tls\",\"email_host\":\"no-replay@lucphat.com\",\"password_host\":\"KUV2GqzF\",\"host_gmail\":\"smtp.gmail.com\",\"port_gmail\":\"587\",\"secure_gmail\":\"tls\",\"email_gmail\":\"autosendnoreply01@gmail.com\",\"password_gmail\":\"ntfocjyshxgoxqbg\",\"lang_default\":\"vi\",\"address\":\"242 Nguy\\u1ec5n H\\u1eefu C\\u1ea3nh, P. \\u0110a Kao, Q. 8, H\\u1ed3 Ch\\u00ed Minh\",\"email\":\"unknown2k.nina@gmail.com\",\"hotline\":\"0906191242\",\"phone\":\"0912345678\",\"zalo\":\"0906191242\",\"oaidzalo\":\"\",\"website\":\"https:\\/\\/www.google.com\\/\",\"fanpage\":\"https:\\/\\/www.facebook.com\\/Tocchien\\/\",\"toado\":\"\",\"toado_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"coords\":\"9.982851, 105.933084\",\"coords_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"colorSite\":\"CC0000\",\"slogan\":\"K\\u00ednh Ch\\u00e0o Qu\\u00fd Kh\\u00e1ch \\u0110\\u00e3 Truy C\\u1eadp V\\u00e0o Website C\\u1ee7a C\\u00f4ng Ty\",\"map\":\"https:\\/\\/goo.gl\\/maps\\/mRGctMVZuQXQao93A\",\"hotline2\":\"0906191242\",\"messenger\":\"Tocchien\",\"tiktok\":\"LienquanMobile\",\"time\":\"8h - 21h (T2 - CN)\"}', '', '', '', 'Tên công ty', 'Sneaker Shoes EN', '');
+(1, '{\"mailertype\":\"1\",\"ip_host\":\"120.72.119.29\",\"port_host\":\"25\",\"secure_host\":\"tls\",\"email_host\":\"no-replay@lucphat.com\",\"password_host\":\"KUV2GqzF\",\"host_gmail\":\"smtp.gmail.com\",\"port_gmail\":\"587\",\"secure_gmail\":\"tls\",\"email_gmail\":\"autosendnoreply01@gmail.com\",\"password_gmail\":\"ntfocjyshxgoxqbg\",\"lang_default\":\"vi\",\"address\":\"\\u0110\\u1ecba ch\\u1ec9 c\\u00f4ng ty\",\"email\":\"email99.company@gmail.com\",\"hotline\":\"0906191242\",\"phone\":\"0912345678\",\"zalo\":\"0906191242\",\"oaidzalo\":\"\",\"website\":\"https:\\/\\/www.google.com\\/\",\"fanpage\":\"https:\\/\\/www.facebook.com\\/Tocchien\\/\",\"toado\":\"\",\"toado_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"coords\":\"9.982851, 105.933084\",\"coords_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"colorSite\":\"CC0000\",\"slogan\":\"K\\u00ednh Ch\\u00e0o Qu\\u00fd Kh\\u00e1ch \\u0110\\u00e3 Truy C\\u1eadp V\\u00e0o Website C\\u1ee7a C\\u00f4ng Ty\",\"map\":\"https:\\/\\/goo.gl\\/maps\\/mRGctMVZuQXQao93A\",\"hotline2\":\"0906191242\",\"messenger\":\"Tocchien\",\"tiktok\":\"LienquanMobile\",\"time\":\"8h - 21h (T2 - CN)\"}', '', '', '', 'Tên công ty', 'Sneaker Shoes EN', '');
 
 -- --------------------------------------------------------
 
@@ -6094,11 +6096,11 @@ INSERT INTO `table_setting` (`id`, `options`, `mastertool`, `headjs`, `bodyjs`, 
 
 CREATE TABLE `table_size` (
   `id` int(11) UNSIGNED NOT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -6121,23 +6123,23 @@ INSERT INTO `table_size` (`id`, `namevi`, `nameen`, `type`, `numb`, `status`, `d
 
 CREATE TABLE `table_static` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options2` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `photo2` varchar(255) DEFAULT NULL,
+  `photo3` varchar(255) DEFAULT NULL,
+  `photo4` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `options2` mediumtext NOT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -6149,8 +6151,8 @@ CREATE TABLE `table_static` (
 INSERT INTO `table_static` (`id`, `photo`, `photo2`, `photo3`, `photo4`, `options`, `options2`, `slugvi`, `slugen`, `contenten`, `contentvi`, `descen`, `descvi`, `nameen`, `namevi`, `file_attach`, `type`, `status`, `date_created`, `date_updated`) VALUES
 (1, 'mountainviewbybyrotekderkflv-9328.png', '', NULL, NULL, '{\"p\":\"mountainviewbybyrotekderkflv-9328.png\",\"w\":1600,\"h\":1116,\"m\":\"image\\/png\"}', '', 've-chung-toi', '', '&lt;p&gt;Nike has always led the market for creativity in its designs. Flyknit shoelace technology is a prime example.&lt;br /&gt;\r\nNike is the market leader in sportswear. This is thanks to Nike possessing a series of state-of-the-art sports technologies such as Dri-fit technology in clothing production, Air Max air cushioning technology. However, when it comes to Nike shoes, we can\'t help but mention Flyknit body technology.&lt;br /&gt;\r\nIntroducing Nike Flyknit technology&lt;br /&gt;\r\nFlyknit technology when introduced in 2012 (photo: sivasdescalzo.com)&lt;br /&gt;\r\nFlyknit is the result of years of research in Nike\'s innovation kitchen. This technology was officially introduced in 2012 at the London Olympics.&lt;br /&gt;\r\nFlyknit owns impressive specs. The entire shoe body is woven from flyknit yarn weighs only 34 grams, when combined with the sole, the total weight of the Flyknit Racer shoes is only 160 grams.&lt;br /&gt;\r\nThis means that athletes will wear shoes that are only half or two-third lighter than they used to be.&lt;br /&gt;\r\nThe essence of the Flynknit technology is the most resilient, monolithic elastomeric fabrics with the latest in digital weaving technology. There are no seams or seams on a sole.&lt;br /&gt;\r\nAs a result, Flyknit is not only light, but also very hugging and can be suitable for all sports such as soccer, jogging, basketball ... etc.&lt;br /&gt;\r\nFlyknit spreading&lt;/p&gt;\r\n', '', 'Soon after, products that used Flyknit bodies were bought by athletes and casual users alike, leading to a sales boom.\r\nThe flyknit shoes, while very expensive, sell out quickly. This reinforces Nike\'s market leadership in sports.', 'Ngay sau đó, những sản phẩm sử dụng thân Flyknit được các vận động viên và cả những người dùng thông thường tìm mua liên tục dẫn đến một sự bùng nổ doanh số.\r\nNhững đôi giày flyknit mặc dù có giá rất cao nhưng đều bán hết nhanh chóng. Điều này giúp củng cố vị thế dẫn đầu thị trường thể thao của Nike.', 'About us', 'Về chúng tôi', '', 'gioi-thieu', 'hienthi', 1609288150, 1689320442),
 (2, '', NULL, NULL, NULL, '', '', 'giay-tot-nhat-cho-nhung-nguoi-tot-nhat', 'finest-footwear-for-finest-peoples', '', '', '', '', 'Finest footwear for finest peoples', 'Giày tốt nhất cho những người tốt nhất', '', 'slogan', 'hienthi', 1609288216, 1609308165),
-(3, '', NULL, NULL, NULL, '', '', '', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: 242 Nguyễn Hữu Cảnh, P. Đa Kao, Q. 8, Hồ Chí Minh&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: unknown2k.nina@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0906191242 hoặc 0901317282&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: &lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;&lt;/p&gt;\r\n', '', '', '', '', '', 'lienhe', 'hienthi', 1609288283, 1689320594),
-(4, '', NULL, NULL, NULL, '', '', 'sneaker-shoes-vi', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: 242 Nguyễn Hữu Cảnh, P. Đa Kao, Q. 8, Hồ Chí Minh&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: unknown2k.nina@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0906191242 hoặc 0901317282&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: &lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;&lt;/p&gt;\r\n', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', '', 'footer', 'hienthi', 1609288313, 1697096473);
+(3, '', NULL, NULL, NULL, '', '', '', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: Địa chỉ công ty&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: email99.company@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0906191242 hoặc 0901317282&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: &lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;/p&gt;\r\n', '', '', '', '', '', 'lienhe', 'hienthi', 1609288283, 1704176165),
+(4, '', NULL, NULL, NULL, '', '', 'sneaker-shoes-vi', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: Địa chỉ công ty&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: email99.company@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0906191242 hoặc 0901317282&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: &lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt; &lt;/p&gt;\r\n', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', '', 'footer', 'hienthi', 1609288313, 1704176173);
 
 -- --------------------------------------------------------
 
@@ -6160,19 +6162,19 @@ INSERT INTO `table_static` (`id`, `photo`, `photo2`, `photo3`, `photo4`, `option
 
 CREATE TABLE `table_tags` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_created` int(11) DEFAULT 0,
   `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -6186,21 +6188,21 @@ CREATE TABLE `table_tags` (
 CREATE TABLE `table_user` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_permission` int(11) DEFAULT 0,
-  `username` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `confirm_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fullname` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `username` varchar(225) DEFAULT NULL,
+  `password` varchar(225) DEFAULT NULL,
+  `confirm_code` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `fullname` varchar(225) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(225) DEFAULT NULL,
   `gender` tinyint(1) DEFAULT 0,
-  `login_session` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `lastlogin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `login_session` varchar(255) DEFAULT NULL,
+  `user_token` varchar(255) DEFAULT NULL,
+  `lastlogin` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `role` tinyint(1) DEFAULT 1,
-  `secret_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `secret_key` varchar(255) DEFAULT NULL,
   `birthday` int(11) DEFAULT 0,
   `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -6210,7 +6212,7 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`id`, `id_permission`, `username`, `password`, `confirm_code`, `avatar`, `fullname`, `phone`, `email`, `address`, `gender`, `login_session`, `user_token`, `lastlogin`, `status`, `role`, `secret_key`, `birthday`, `numb`) VALUES
-(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', '8f0c7ddfc1f6af40287d1e831f36034b', '1699066864', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
+(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', '50b0784c81b56b415f5808c5f0c78a60', '1704683254', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
 
 -- --------------------------------------------------------
 
@@ -6220,7 +6222,7 @@ INSERT INTO `table_user` (`id`, `id_permission`, `username`, `password`, `confir
 
 CREATE TABLE `table_user_limit` (
   `id` int(11) NOT NULL,
-  `login_ip` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `login_ip` varchar(50) NOT NULL,
   `login_attempts` int(11) NOT NULL,
   `attempt_time` int(11) NOT NULL,
   `locked_time` int(11) NOT NULL
@@ -6242,9 +6244,9 @@ INSERT INTO `table_user_limit` (`id`, `login_ip`, `login_attempts`, `attempt_tim
 CREATE TABLE `table_user_log` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_user` int(11) DEFAULT 0,
-  `ip` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '0.0.0.0',
+  `ip` varchar(50) DEFAULT '0.0.0.0',
   `timelog` int(11) DEFAULT 0,
-  `user_agent` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `user_agent` mediumtext DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -6429,7 +6431,9 @@ INSERT INTO `table_user_log` (`id`, `id_user`, `ip`, `timelog`, `user_agent`) VA
 (175, 1, '::1', 1697852580, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
 (176, 1, '::1', 1698820626, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'),
 (177, 1, '::1', 1698997809, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
-(178, 1, '::1', 1699060443, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36');
+(178, 1, '::1', 1699060443, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
+(179, 1, '::1', 1704176030, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
+(180, 1, '::1', 1704680542, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -6438,9 +6442,9 @@ INSERT INTO `table_user_log` (`id`, `id_user`, `ip`, `timelog`, `user_agent`) VA
 --
 
 CREATE TABLE `table_user_online` (
-  `session` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `session` char(100) DEFAULT NULL,
   `time` int(11) DEFAULT 0,
-  `ip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `ip` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -6448,7 +6452,7 @@ CREATE TABLE `table_user_online` (
 --
 
 INSERT INTO `table_user_online` (`session`, `time`, `ip`) VALUES
-('ub8uv647v6tth6itemehh583af', 1698992369, '::1');
+('tsnjhlov8nk7430ged3vkhtg4l', 1704681590, '::1');
 
 -- --------------------------------------------------------
 
@@ -6461,7 +6465,7 @@ CREATE TABLE `table_variants` (
   `id_parent` int(11) NOT NULL,
   `color` int(11) NOT NULL,
   `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `table_variants`
@@ -6485,7 +6489,7 @@ CREATE TABLE `table_variants1` (
   `size` int(11) NOT NULL,
   `price_new` double NOT NULL,
   `price_old` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `table_variants1`
@@ -6505,12 +6509,12 @@ CREATE TABLE `table_ward` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_city` int(11) DEFAULT 0,
   `id_district` int(11) DEFAULT 0,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `code` varchar(5) DEFAULT NULL,
+  `level` varchar(100) DEFAULT NULL,
   `numb` int(11) DEFAULT 0,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `date_updated` int(11) DEFAULT 0,
   `date_created` int(11) DEFAULT 0,
   `ship_price` double DEFAULT NULL
@@ -17483,7 +17487,7 @@ ALTER TABLE `table_contact`
 -- AUTO_INCREMENT for table `table_counter`
 --
 ALTER TABLE `table_counter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10528;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10531;
 
 --
 -- AUTO_INCREMENT for table `table_coupon`
@@ -17669,7 +17673,7 @@ ALTER TABLE `table_pushonesignal`
 -- AUTO_INCREMENT for table `table_seo`
 --
 ALTER TABLE `table_seo`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=337;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=341;
 
 --
 -- AUTO_INCREMENT for table `table_seopage`
@@ -17717,7 +17721,7 @@ ALTER TABLE `table_user_limit`
 -- AUTO_INCREMENT for table `table_user_log`
 --
 ALTER TABLE `table_user_log`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
 -- AUTO_INCREMENT for table `table_variants`
