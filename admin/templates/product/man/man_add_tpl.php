@@ -212,7 +212,7 @@ if (
                 <?php if ((isset($config['product'][$type]['other']) && $config['product'][$type]['other'] == true)) { ?>
                     <div class="card card-primary card-outline text-sm">
                         <div class="card-header">
-                            <h3 class="card-title">Tuỳ chọn khác</h3>
+                            <h3 class="card-title">Tuỳ chỉnh khác</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                             </div>
