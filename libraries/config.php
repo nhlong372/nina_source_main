@@ -39,7 +39,7 @@ $config = array(
     'author' => array(
         'name' => 'Long Nguyễn',
         'email' => 'nguyenhoanglong0307.nina@gmail.com',
-        'timefinish' => '08/01/2024' // thời gian update
+        'timefinish' => '18/01/2024' // thời gian update
     ),
     'arrayDomainSSL' => array(),
     'database' => array(
