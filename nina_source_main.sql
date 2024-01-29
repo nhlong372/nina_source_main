@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2024 at 07:15 AM
+-- Generation Time: Jan 29, 2024 at 08:42 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -4036,7 +4036,11 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 (10529, 1704680507, '::1'),
 (10530, 1704681590, '::1'),
 (10531, 1704961139, '::1'),
-(10532, 1705478325, '::1');
+(10532, 1705478325, '::1'),
+(10533, 1705895486, '::1'),
+(10534, 1706503869, '::1'),
+(10535, 1706511385, '::1'),
+(10536, 1706513615, '::1');
 
 -- --------------------------------------------------------
 
@@ -5630,7 +5634,8 @@ INSERT INTO `table_photo` (`id`, `photo`, `file_attach`, `videomp4`, `contenten`
 (27, 'logo-2234-4920.png', NULL, '', '', '', '', '', '', '', '', '', '{\"watermark\":{\"position\":\"9\",\"per\":\"5\",\"small_per\":\"5\",\"max\":\"90\",\"min\":\"50\"}}', 'watermark-news', 'photo_static', 0, 'hienthi', 1609287062, 1683863321),
 (28, 'poduct-1-1758-7258.jpeg', NULL, '', 'COMPLEX is a community of creators and curators, armed with the Internet, committed to surfacing and sharing the voices and conversations that define our new America. Our videos exemplify convergence culture, exploring topics that include music, sneakers, style, sports and pop culture through original shows and Complex News segments. Featuring your favorite celebrities, authoritative commentary, and a unique voice, our videos make culture pop.', 'COMPLEX là một cộng đồng gồm những người sáng tạo và người quản lý, được trang bị Internet, cam kết xuất hiện và chia sẻ những tiếng nói và cuộc trò chuyện xác định nước Mỹ mới của chúng ta. Video của chúng tôi thể hiện văn hóa hội tụ, khám phá các chủ đề bao gồm âm nhạc, giày thể thao, phong cách, thể thao và văn hóa đại chúng thông qua các chương trình gốc và phân đoạn Tin tức phức hợp. Với những người nổi tiếng yêu thích của bạn, bình luận có thẩm quyền và giọng nói độc đáo, video của chúng tôi làm nổi bật văn hóa.', 'Billie Eilish goes Sneaker Shopping at Stadium Goods in New York City and talks about how Riff Raff\'s music got her into Jordans, potentially working with Jordan Brand on a shoe, and why she likes men\'s sneakers.', 'Billie Eilish đi mua sắm giày thể thao tại Stadium Goods ở thành phố New York và nói về cách âm nhạc của Riff Raff đã đưa cô ấy đến với Jordans, có khả năng hợp tác với Jordan Brand về một đôi giày và tại sao cô ấy thích giày thể thao nam.', 'Billie Eilish Goes Sneaker Shopping With Complex', 'Billie Eilish đi mua sắm giày thể thao với khu phức hợp', '', 'https://www.youtube.com/watch?v=EvdzQdnZPcw', '', 'video', 'photo_static', 0, 'hienthi', 1609288413, 1621819276),
 (46, 'babysharkdodo-2666.mp3', NULL, '', '', '', '', '', '', '', '', '', '', 'nhacnen', 'photo_static', 0, '', 1672991128, 0),
-(47, '', NULL, 'thailiembackground-3766.mp4', '', '', '', '', '', '', '', '', '', 'videomp4', 'photo_static', 0, '', 1672991220, 1678334294);
+(47, '', NULL, 'thailiembackground-3766.mp4', '', '', '', '', '', '', '', '', '', 'videomp4', 'photo_static', 0, '', 1672991220, 1678334294),
+(48, 'zl-41010.png', '', '', '', '', '', '', '', '', 'https://www.google.com/', '', '', 'social', 'photo_multi', 5, 'hienthi', 1706513681, 0);
 
 -- --------------------------------------------------------
 
@@ -6253,7 +6258,7 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`id`, `id_permission`, `username`, `password`, `confirm_code`, `avatar`, `fullname`, `phone`, `email`, `address`, `gender`, `login_session`, `user_token`, `lastlogin`, `status`, `role`, `secret_key`, `birthday`, `numb`) VALUES
-(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', 'e85bab17599f2f6f7a8185e5035e2ee6', '1705478490', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
+(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', 'bf917cfdfc08114a5c9381b22ac45f69', '1706513686', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
 
 -- --------------------------------------------------------
 
@@ -6475,7 +6480,8 @@ INSERT INTO `table_user_log` (`id`, `id_user`, `ip`, `timelog`, `user_agent`) VA
 (178, 1, '::1', 1699060443, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
 (179, 1, '::1', 1704176030, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'),
 (180, 1, '::1', 1704680542, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'),
-(181, 1, '::1', 1705478477, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36');
+(181, 1, '::1', 1705478477, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'),
+(182, 1, '::1', 1706513630, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 OPR/105.0.0.0');
 
 -- --------------------------------------------------------
 
@@ -6494,7 +6500,7 @@ CREATE TABLE `table_user_online` (
 --
 
 INSERT INTO `table_user_online` (`session`, `time`, `ip`) VALUES
-('tsnjhlov8nk7430ged3vkhtg4l', 1705478428, '::1');
+('qi0npe298t6qbl8brcvb6j57hp', 1706514026, '::1');
 
 -- --------------------------------------------------------
 
@@ -17529,7 +17535,7 @@ ALTER TABLE `table_contact`
 -- AUTO_INCREMENT for table `table_counter`
 --
 ALTER TABLE `table_counter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10533;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10537;
 
 --
 -- AUTO_INCREMENT for table `table_coupon`
@@ -17643,7 +17649,7 @@ ALTER TABLE `table_permission_group`
 -- AUTO_INCREMENT for table `table_photo`
 --
 ALTER TABLE `table_photo`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `table_product`
@@ -17763,7 +17769,7 @@ ALTER TABLE `table_user_limit`
 -- AUTO_INCREMENT for table `table_user_log`
 --
 ALTER TABLE `table_user_log`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
 
 --
 -- AUTO_INCREMENT for table `table_variants`
