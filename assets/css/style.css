@@ -75,7 +75,7 @@ img.initial,img.loaded,img.error{opacity:1}img:not([src]){visibility:hidden}
 .menu ul li a h2{}
 .menu ul li a span{}
 .menu ul li:hover > a, .menu ul li a.active{color: #ff0}
-.menu ul li:hover > a h2{}, .menu ul li a.active h2{}
+.menu ul li:hover > a h2, .menu ul li a.active h2{}
 .menu ul li:hover > a span, .menu ul li a.active span{}
 .menu ul li:hover > a.has-child::after, .menu ul li a.has-child.active::after { border-color: #ff0; }
 .menu ul li .li-tim{}

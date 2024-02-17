@@ -693,16 +693,16 @@ class Functions
         if (filter_var(str_replace(ASSET, "", $info['pathSrc']), FILTER_VALIDATE_URL)) {
             $info['hasURL'] = true;
         }
-        if ($config['website']['image']['hasWebp']) {
-            if (!$info['sizes']) {
-                if (!$info['hasURL']) {
-                    $this->converWebp($info['pathSrc']);
-                }
-            }
-            if (!$info['hasURL']) {
-                $info['pathSrc'] .= '.webp';
-            }
-        }
+        // if ($config['website']['image']['hasWebp']) {
+        //     if (!$info['sizes']) {
+        //         if (!$info['hasURL']) {
+        //             $this->converWebp($info['pathSrc']);
+        //         }
+        //     }
+        //     if (!$info['hasURL']) {
+        //         $info['pathSrc'] .= '.webp';
+        //     }
+        // }
         /* Src */
         $info['src'] = (!empty($info['isLazy']) && strpos($info['class'], 'lazy') !== false) ? "data-src='" . $info['pathSrc'] . "'" : "src='" . $info['pathSrc'] . "'";
         /* Image */
@@ -1351,7 +1351,7 @@ class Functions
             */
     }
     /* Convert Webp */
-    public function converWebp($in)
+    /*public function converWebp($in)
     {
         global $config;
         $in = $_SERVER['DOCUMENT_ROOT'] . $config['database']['url'] . str_replace(ASSET, "", $in);
@@ -1382,7 +1382,7 @@ class Functions
                 ]
             ]);
         }
-    }
+    }*/
     /* Create thumb */
     public function createThumb($width_thumb = 0, $height_thumb = 0, $zoom_crop = '1', $src = '', $watermark = null, $path = THUMBS, $preview = false, $args = array(), $quality = 100)
     {
@@ -1656,9 +1656,9 @@ class Functions
         if ($func == 'imagejpeg') $func($canvas, NULL, 100);
         else $func($canvas, NULL, floor($quality * 0.09));
         imagedestroy($canvas);
-        if ($config['website']['image']['hasWebp'] && ($webp || !$preview)) {
-            $this->converWebp($upload_dir . $image_name);
-        }
+        // if ($config['website']['image']['hasWebp'] && ($webp || !$preview)) {
+        //     $this->converWebp($upload_dir . $image_name);
+        // }
         exit;
     }
     /* String random */
