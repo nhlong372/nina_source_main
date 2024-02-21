@@ -31,15 +31,13 @@ define("POPUP",false); //MỞ POPUP
 
 /* Cấu hình các nút tiện ích góc phải dưới */
 define('OPENPHONECOMBO',false);
-define("OPENTIENICH",true);
-
 
 /* Cấu hình chung */
 $config = array(
     'author' => array(
         'name' => 'Long Nguyễn',
         'email' => 'nguyenhoanglong0307.nina@gmail.com',
-        'timefinish' => '29/01/2024' // thời gian update
+        'timefinish' => '21/02/2024' // thời gian update
     ),
     'arrayDomainSSL' => array(),
     'database' => array(
