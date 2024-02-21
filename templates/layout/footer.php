@@ -102,7 +102,7 @@
         </div>
     <?php }else{*/ ?>
     <?php echo $addons->set('footer-map', 'footer-map', 6); //} ?>    
-    <?php if(OPENTIENICH == true) echo $addons->set('messages-facebook', 'messages-facebook', 2); ?>
+    <?php echo $addons->set('messages-facebook', 'messages-facebook', 2); ?>
 </div>
 <a class="cart-fixed liked-fixed text-decoration-none" href="yeu-thich" title="Danh sách yêu thích">
     <i class="fas fa-heart"></i>
@@ -114,7 +114,6 @@
         <span class="count-cart"><?= (!empty($_SESSION['cart'])) ? count($_SESSION['cart']) : 0 ?></span>
     </a>
 <?php } ?>
-<?php if(OPENTIENICH == true) { ?>
 <a class="btn-map btn-frame text-decoration-none" target="_blank" href="<?= $optsetting['map'] ?>">
     <div class="animated infinite zoomIn kenit-alo-circle"></div>
     <div class="animated infinite pulse kenit-alo-circle-fill"></div>
@@ -132,7 +131,6 @@
     <div class="animated infinite pulse kenit-alo-circle-fill"></div>
     <i><?= $func->getImage(['size-error' => '35x35x2', 'upload' => 'assets/images/', 'image' => 'hl.png', 'alt' => 'Hotline']) ?></i>
 </a>
-<?php } ?>
 
 <?php /*<a class="btn-book btn-frame text-decoration-none open-popup" data-id="popup-form" data-animation="slideLeft">
     <div class="animated infinite zoomIn kenit-alo-circle"></div>

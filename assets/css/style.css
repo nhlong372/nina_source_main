@@ -602,14 +602,14 @@ div#danhmuc ul li ul li ul li ul li ul li a{color: #0193de;font-family: 'ro-r'}
 .layout-sign .title-main{margin-bottom: 0;}
 .layout-sign .title-main span{color: #fff}
 .layout-sign #form-newsletter .newsletter-input {position: relative;width: 306px;margin-right: 12px;}
-.layout-sign #form-newsletter .newsletter-input:nth-child(3){margin-right: 0;}
-.layout-sign #form-newsletter .newsletter-input ::-webkit-input-placeholder {color: #000; }
-.layout-sign #form-newsletter .newsletter-input :-moz-placeholder {/* Firefox 18- */ color: #000; }
-.layout-sign #form-newsletter .newsletter-input ::-moz-placeholder {/* Firefox 19+ */ color: #000; }
-.layout-sign #form-newsletter .newsletter-input :-ms-input-placeholder {color: #000; }
-.layout-sign #form-newsletter .newsletter-input input {background: #fff;color: #000;height: 100%;padding: 13px 10px;}
-.layout-sign #form-newsletter .newsletter-button {position: absolute;right: 0;top: 50%;transform: translateY(-50%);margin-top: 0;}
-.layout-sign #form-newsletter .newsletter-button input[type="submit"] {border-radius: 10px 0 0 10px;font-size: 14px;line-height: 25px;color: #ffffff;background-color: #000 !important;padding: 10px 10px;}
+.layout-sign #form-newsletter .newsletter-input input::-webkit-input-placeholder {color: #000; }
+.layout-sign #form-newsletter .newsletter-input input:-moz-placeholder {/* Firefox 18- */ color: #000; }
+.layout-sign #form-newsletter .newsletter-input input::-moz-placeholder {/* Firefox 19+ */ color: #000; }
+.layout-sign #form-newsletter .newsletter-input input:-ms-input-placeholder {color: #000; }
+.layout-sign #form-newsletter .newsletter-input input {background: #fff;color: #000;height: 100%;padding: 13px 10px;border-radius: 5px;}
+.layout-sign #form-newsletter .newsletter-button {margin-top: 0;}
+.layout-sign #form-newsletter .newsletter-button input[type="submit"] {font-size: 14px; line-height: 25px; color: #ffffff; background-color: #000 !important; padding: 10px 10px; border-radius: 5px;}
+.layout-sign #form-newsletter .newsletter-button input[type="submit"]:hover{}
 
 #video-img-select .youtube-player {height: 282px; position: relative; cursor: pointer; }
 #video-img-select .youtube-player .btn-player {display: inline-block; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 100; pointer-events: none; }
