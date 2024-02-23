@@ -597,17 +597,17 @@ div#danhmuc ul li ul li ul li ul li ul li a{color: #0193de;font-family: 'ro-r'}
 .proprice_item_color a .tooltip-pro-detail span{color: #fff;position: relative;z-index: 3;}
 
 .wrap-sign{background-color: #c00;padding: 22px 0;}
-.layout-sign{display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;}
-.layout-sign #form-newsletter{display: flex;position: relative;flex-wrap: wrap;}
-.layout-sign .title-main{margin-bottom: 0;}
+.layout-sign{display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
+.layout-sign #form-newsletter{display: grid;position: relative;grid-template-columns: repeat(4, 1fr);gap: 0 10px;}
+.layout-sign .title-main{margin-bottom: 0;width: 100%;margin-bottom: 1.5rem;}
 .layout-sign .title-main span{color: #fff}
-.layout-sign #form-newsletter .newsletter-input {position: relative;width: 306px;margin-right: 12px;}
+.layout-sign #form-newsletter .newsletter-input {position: relative;width: 290px;}
+.layout-sign #form-newsletter .newsletter-input input {background: #fff;color: #000;height: 100%;padding: 12px 10px;border-radius: 5px;width: 100%;}
 .layout-sign #form-newsletter .newsletter-input input::-webkit-input-placeholder {color: #000; }
 .layout-sign #form-newsletter .newsletter-input input:-moz-placeholder {/* Firefox 18- */ color: #000; }
 .layout-sign #form-newsletter .newsletter-input input::-moz-placeholder {/* Firefox 19+ */ color: #000; }
 .layout-sign #form-newsletter .newsletter-input input:-ms-input-placeholder {color: #000; }
-.layout-sign #form-newsletter .newsletter-input input {background: #fff;color: #000;height: 100%;padding: 13px 10px;border-radius: 5px;}
-.layout-sign #form-newsletter .newsletter-button {margin-top: 0;}
+.layout-sign #form-newsletter .newsletter-button {margin-top: 0;width: 290px;}
 .layout-sign #form-newsletter .newsletter-button input[type="submit"] {font-size: 14px; line-height: 25px; color: #ffffff; background-color: #000 !important; padding: 10px 10px; border-radius: 5px;}
 .layout-sign #form-newsletter .newsletter-button input[type="submit"]:hover{}
 
